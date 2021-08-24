@@ -9,15 +9,11 @@
         mc:Ignorable="d"
         Title="Cake Launcher" Height="450" Width="800">
     <Grid>
-        <mah:HamburgerMenu HorizontalAlignment="Left" Height="337" VerticalAlignment="Center" Width="400" FontFamily="Microsoft YaHei" PaneBackground="#CC444444" Tag="开始" HamburgerButtonName="开始" HamburgerButtonHelpText="开始">
-            <mah:Tile Margin="200,10,12,187">
-                <mah:FlipView Height="140" Width="140" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" BannerBackground="#00121212" BannerText="资讯中心" SelectionChanged="FlipView_SelectionChanged"/>
-                
-            </mah:Tile>
-        </mah:HamburgerMenu>
-        <mah:ToggleSwitch Height="62" Header="ToggleSwitch" Margin="514,105,0,0" VerticalAlignment="Top" Width="29"/>
-        <mah:MetroProgressBar HorizontalAlignment="Left" Height="51" Margin="462,252,0,0" VerticalAlignment="Top" Width="176" IsIndeterminate="True"/>
-        <mah:DropDownButton HorizontalAlignment="Left" Height="36" Margin="550,49,0,0" VerticalAlignment="Top" Width="157"/>
-        <mah:ProgressRing HorizontalAlignment="Left" Height="89" Margin="667,227,0,0" VerticalAlignment="Top" Width="89"/>
+        <mah:Tile Content="" HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="147" FontFamily="Microsoft YaHei"/>
+        <mah:FlipView HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="147" IsBannerEnabled="True" BannerText="资讯中心" BannerBackground="#00000000"/>
+        <mah:Tile Content="" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="147" FontFamily="Microsoft YaHei" Margin="40,222,0,0"/>
+        <mah:FlipView HorizontalAlignment="Left" Height="73" Margin="40,195,0,0" VerticalAlignment="Top" Width="147" IsBannerEnabled="True" BannerText="打开主页" BannerBackground="#00000000"/>
+        <mah:Tile Content="" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="73" FontFamily="Microsoft YaHei" Margin="40,300,0,0"/>
+        <mah:FlipView HorizontalAlignment="Left" Margin="40,274,0,0" VerticalAlignment="Top" Width="73" IsBannerEnabled="True" BannerText="设置" BannerBackground="#00000000"/>
     </Grid>
 </mah:MetroWindow>
