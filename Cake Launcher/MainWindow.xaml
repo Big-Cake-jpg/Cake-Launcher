@@ -1,13 +1,20 @@
-﻿<mah:MetroWindow x:Class="Cake_Launcher.MainWindow"
+﻿<mah:MetroWindow
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cake_Launcher"
+        xmlns:Custom="http://metro.mahapps.com/winfx/xaml/iconpacks" x:Class="Cake_Launcher.MainWindow"
         mc:Ignorable="d"
         Title="Cake Launcher" Height="450" Width="800">
     <Grid>
-        
+        <mah:HamburgerMenu HorizontalAlignment="Left" Height="337" VerticalAlignment="Center" Width="400" FontFamily="Microsoft YaHei" PaneBackground="#CC444444" Tag="开始" HamburgerButtonName="开始" HamburgerButtonHelpText="开始">
+            <mah:Tile Content="Tile" Margin="200,10,12,187"/>
+        </mah:HamburgerMenu>
+        <mah:ToggleSwitch Height="62" Header="ToggleSwitch" Margin="514,105,0,0" VerticalAlignment="Top" Width="29"/>
+        <mah:MetroProgressBar HorizontalAlignment="Left" Height="51" Margin="462,252,0,0" VerticalAlignment="Top" Width="176"/>
+        <mah:DropDownButton HorizontalAlignment="Left" Height="36" Margin="550,49,0,0" VerticalAlignment="Top" Width="157"/>
+        <mah:ProgressRing HorizontalAlignment="Left" Height="89" Margin="667,227,0,0" VerticalAlignment="Top" Width="89"/>
     </Grid>
 </mah:MetroWindow>
