@@ -13,7 +13,7 @@
             <mah:Tile Content="Tile" Margin="200,10,12,187"/>
         </mah:HamburgerMenu>
         <mah:ToggleSwitch Height="62" Header="ToggleSwitch" Margin="514,105,0,0" VerticalAlignment="Top" Width="29"/>
-        <mah:MetroProgressBar HorizontalAlignment="Left" Height="51" Margin="462,252,0,0" VerticalAlignment="Top" Width="176"/>
+        <mah:MetroProgressBar HorizontalAlignment="Left" Height="51" Margin="462,252,0,0" VerticalAlignment="Top" Width="176" IsIndeterminate="True"/>
         <mah:DropDownButton HorizontalAlignment="Left" Height="36" Margin="550,49,0,0" VerticalAlignment="Top" Width="157"/>
         <mah:ProgressRing HorizontalAlignment="Left" Height="89" Margin="667,227,0,0" VerticalAlignment="Top" Width="89"/>
     </Grid>
