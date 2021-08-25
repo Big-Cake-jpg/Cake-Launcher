@@ -9,11 +9,33 @@
         mc:Ignorable="d"
         Title="Cake Launcher" Height="450" Width="800">
     <Grid>
-        <mah:Tile Content="" HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="147" FontFamily="Microsoft YaHei"/>
-        <mah:FlipView HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="147" IsBannerEnabled="True" BannerText="资讯中心" BannerBackground="#00000000"/>
-        <mah:Tile Content="" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="147" FontFamily="Microsoft YaHei" Margin="40,222,0,0"/>
-        <mah:FlipView HorizontalAlignment="Left" Height="73" Margin="40,195,0,0" VerticalAlignment="Top" Width="147" IsBannerEnabled="True" BannerText="打开主页" BannerBackground="#00000000"/>
-        <mah:Tile Content="" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="73" FontFamily="Microsoft YaHei" Margin="40,300,0,0"/>
-        <mah:FlipView HorizontalAlignment="Left" Margin="40,274,0,0" VerticalAlignment="Top" Width="73" IsBannerEnabled="True" BannerText="设置" BannerBackground="#00000000"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://pic.liesio.com/2021/08/08/8f31f0aada603.jpg"/>
+        </Grid.Background>
+        <mah:Tile HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="147" FontFamily="Segoe UI" Title="资讯中心" BorderBrush="#FF848484">
+            <Custom:PackIconModern Height="58" Width="58" Kind="Newspaper"/>
+        </mah:Tile>
+        <mah:Tile HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="147" FontFamily="Segoe UI" Margin="40,222,0,0" Title="帮助" BorderBrush="#FF848484">
+            <Custom:PackIconModern Height="30" Width="30" Kind="BookPerspectiveHelp"/>
+        </mah:Tile>
+        <mah:Tile HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="73" FontFamily="Segoe UI" Margin="40,300,0,0" Title="设置" BorderBrush="#FF848484" Background="#CC0078D7">
+            <Custom:PackIconModern Width="43" Kind="Settings" Height="30" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" >
+                <Custom:PackIconModern.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Custom:PackIconModern.RenderTransform>
+            </Custom:PackIconModern>
+        </mah:Tile>
+        <TextBlock HorizontalAlignment="Left" Margin="40,10,0,0" TextWrapping="Wrap" Text="开始" VerticalAlignment="Top" Height="55" Width="73" Foreground="White" FontSize="36" FontFamily="Segoe UI"/>
+        <mah:Tile HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" FontFamily="Segoe UI" Margin="118,300,0,0" BorderBrush="#FF848484" FontSize="12" ToolTip="切换版本" AutomationProperties.HelpText="切换版本">
+            <Custom:PackIconFontAwesome Height="21" Width="21" Kind="ExchangeAltSolid" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </mah:Tile>
+        <mah:Tile HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" FontFamily="Segoe UI" Margin="154,300,0,0" BorderBrush="#FF848484" FontSize="12" ToolTip="启动游戏" AutomationProperties.HelpText="启动游戏">
+            <Custom:PackIconFontAwesome Height="21" Width="21" Kind="BurnSolid"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </mah:Tile>
     </Grid>
 </mah:MetroWindow>

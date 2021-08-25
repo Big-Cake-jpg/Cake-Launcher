@@ -26,9 +26,9 @@ namespace Cake_Launcher
             InitializeComponent();
         }
 
-        private void FlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void OpenSettingsPage(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
     }
 }
