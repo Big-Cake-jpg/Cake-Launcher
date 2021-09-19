@@ -15,10 +15,10 @@
         <mah:Tile HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="147" FontFamily="Segoe UI" Title="资讯中心" BorderBrush="#FF848484">
             <Custom:PackIconModern Height="58" Width="58" Kind="Newspaper"/>
         </mah:Tile>
-        <mah:Tile HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="147" FontFamily="Segoe UI" Margin="40,222,0,0" Title="帮助" BorderBrush="#FF848484">
+        <mah:Tile Click="TileClick_OpenHelp" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="147" FontFamily="Segoe UI" Margin="40,222,0,0" Title="帮助" BorderBrush="#FF848484">
             <Custom:PackIconModern Height="30" Width="30" Kind="BookPerspectiveHelp"/>
         </mah:Tile>
-        <mah:Tile HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="73" FontFamily="Segoe UI" Margin="40,300,0,0" Title="设置" BorderBrush="#FF848484" Background="#CC0078D7">
+        <mah:Tile HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="73" FontFamily="Segoe UI" Margin="40,300,0,0" Title="设置" BorderBrush="#FF848484" Background="#CC0078D7" AutomationProperties.Name="Settings">
             <Custom:PackIconModern Width="43" Kind="Settings" Height="30" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" >
                 <Custom:PackIconModern.RenderTransform>
                     <TransformGroup>
@@ -34,8 +34,26 @@
         <mah:Tile HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" FontFamily="Segoe UI" Margin="118,300,0,0" BorderBrush="#FF848484" FontSize="12" ToolTip="切换版本" AutomationProperties.HelpText="切换版本">
             <Custom:PackIconFontAwesome Height="21" Width="21" Kind="ExchangeAltSolid" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </mah:Tile>
-        <mah:Tile HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" FontFamily="Segoe UI" Margin="154,300,0,0" BorderBrush="#FF848484" FontSize="12" ToolTip="启动游戏" AutomationProperties.HelpText="启动游戏">
+        <mah:Tile Click="ButtonClick_StartGame" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" FontFamily="Segoe UI" Margin="154,300,0,0" BorderBrush="#FF848484" FontSize="12" ToolTip="启动游戏" AutomationProperties.HelpText="启动游戏" Background="#CC0078D7">
             <Custom:PackIconFontAwesome Height="21" Width="21" Kind="BurnSolid"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </mah:Tile>
+        <ComboBox HorizontalAlignment="Left" Height="32" Margin="258,112,0,0" VerticalAlignment="Top" Width="201" DisplayMemberPath="Id" Background="#CC0078D7" x:Name="versionCombo" Foreground="White"/>
+        <ComboBox x:Name="JavaPathCombo" HorizontalAlignment="Left" Height="32" Margin="258,75,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI" FontSize="16"/>
+        <TextBox x:Name="MemoryTextBox" HorizontalAlignment="Left" Height="32" Margin="258,149,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="466,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="Java 路径"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="466,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="选择版本"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="466,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="最大内存（MB）"/></TextBlock>
+        <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="32" Margin="258,186,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="466,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="用户名"/></TextBlock>
+        <ContentControl Content="ContentControl" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="577,10,0,0"/>
+        <mah:Tile HorizontalAlignment="Left" Height="55" Margin="577,222,0,0" VerticalAlignment="Top" Width="55" ToolTip="微软正版">
+            <Custom:PackIconModern Width="35" Height="35" Kind="SocialMicrosoft" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </mah:Tile>
+        <mah:Tile HorizontalAlignment="Left" Height="55" Margin="722,222,0,0" VerticalAlignment="Top" Width="55" ToolTip="离线登录">
+            <Custom:PackIconMaterialDesign Width="35" Height="35" Kind="AccountCircle" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </mah:Tile>
+        <mah:Tile HorizontalAlignment="Left" Height="55" Margin="650,222,0,0" VerticalAlignment="Top" Width="54" ToolTip="Mojang 正版">
+            <Image Height="35" Width="35" HorizontalAlignment="Center" VerticalAlignment="Center" Source="https://pic.liesio.com/2021/08/27/0121e843fcca1.png" />
         </mah:Tile>
     </Grid>
 </mah:MetroWindow>
