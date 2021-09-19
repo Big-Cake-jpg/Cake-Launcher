@@ -26,6 +26,11 @@ namespace Cake_Launcher
     /// </summary>
     public partial class MainWindow
     {
+
+        LoginUI.Offline Offline = new LoginUI.Offline();
+        LoginUI.Mojang Mojang = new LoginUI.Mojang();
+        LoginUI.Microsoft Microsoft = new LoginUI.Microsoft();
+        public int launchMode;
         SquareMinecraftLauncher.Minecraft.Tools tools = new SquareMinecraftLauncher.Minecraft.Tools();
         public static LauncherCore Core = LauncherCore.Create();
 
@@ -45,31 +50,34 @@ namespace Cake_Launcher
             JavaPathCombo.SelectedItem = JavaPathCombo.Items[0];
             versionCombo.SelectedItem = versionCombo.Items[0];
         }
-        
-        public void OpenHelp()
-        {
-
-        }
 
         public void StartGame()
         {
-            if (versionCombo.Text != string.Empty && JavaPathCombo.Text != string.Empty && Offline.OfflineID.Text != string.Empty && MemoryTextBox.Text != string.Empty)
+            LaunchOptions launchOptions = new LaunchOptions();
+            switch (launchMode)
+            {
+                case 1:
+                    launchOptions.Authenticator = new OfflineAuthenticator(Offline.UserID.Text);
+                    break;
+                case 2:
+                    launchOptions.Authenticator = new YggdrasilLogin(Mojang.MojangEmail.Text,Mojang.MojangPassword.Password,false);
+                    break;
+            }
+
+            launchOptions.MaxMemory = Convert.ToInt32(MemoryTextBox.Text);
+            if (versionCombo.Text!=string.Empty&&
+                JavaPathCombo.Text!=string.Empty&&
+                (Offline.UserID.Text ||(Mojang.MojangEmail.Text != string.Empty &&
+                Mojang.MojangPassword.Password != string.Empty &&
+                MemoryTextBox.Text != string.Empty)))
             {
                 try
                 {
                     Core.JavaPath = (string)JavaPathCombo.SelectedItem;
                     var ver = (KMCCC.Launcher.Version)versionCombo.SelectedItem;
-                    var result = Core.Launch(new LaunchOptions
-                    {
-                        Version = ver, 
-                        MaxMemory = Convert.ToInt32(MemoryTextBox.Text), 
-                        Authenticator = new OfflineAuthenticator(Offline.OfflineID.Text), //离线启动，ZhaiSoul那儿为你要设置的游戏名
-                                                                                 //Authenticator = new YggdrasilLogin("邮箱", "密码", true), // 正版启动，最后一个为是否twitch登录
-                        Mode = LaunchMode.MCLauncher, 
-                                                      // Server = new ServerInfo { Address = "服务器IP地址", Port = "服务器端口" }, //设置启动游戏后，自动加入指定IP的服务器，可以不要
-                        Size = new WindowSize { Height = 768, Width = 1280 } 
-                    });
+                    launchOptions.Version = ver;
 
+                    var result = Core.Launch(launchOptions);
                     if (!result.Success)
                     {
                         //MessageBox.Show(result.ErrorMessage, result.ErrorType.ToString());
@@ -111,6 +119,36 @@ namespace Cake_Launcher
         private void TileClick_OpenHelp(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        /// <summary>微软正版
+        private void TileClick_Microsoft(object sender, RoutedEventArgs e)
+        {
+
+            {
+
+            }
+            launchMode = 3;
+        }
+
+        /// <summary>离线登录
+        private void TileClick_Offline(object sender,RoutedEventArgs e)
+        {
+            LoginContent.Content = new Frame
+            {
+                Content = Offline
+            };
+            launchMode = 1;
+        }
+
+        /// <summary>Mojang 正版
+        private void TileClick_Mojang(object sender,RoutedEventArgs e)
+        {
+            LoginContent.Content = new Frame
+            {
+                Content = Mojang
+            };
+            launchMode = 2;
         }
     }
 }

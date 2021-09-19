@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using KMCCC;
+using Cake_Launcher.LoginUI;
 
 namespace Cake_Launcher
 {
