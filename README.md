@@ -1,4 +1,4 @@
-﻿## Cake Launcher | CakeMC 服务器专用启动器
+﻿# Cake Launcher | CakeMC 服务器专用启动器
 
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Big-Cake-jpg/Cake-Launcher?label=Pull%20Requests&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/Big-Cake-jpg/Cake-Launcher?label=Issues&style=flat-square)
@@ -8,13 +8,13 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/Big-Cake-jpg/Cake-Launcher?label=Last%20commit&style=flat-square)
 ![GitHub Author](https://img.shields.io/badge/Author-Big__Cake-blue)
 
-# 这是什么？
+## 这是什么？
 
 这是 CakeMC 服务器的专用启动器 Cake Launcher 的代码仓库
 
 我们希望有能力的大佬来贡献
 
-# 如何参与编写？
+## 如何参与编写？
 
 在 GitHub 页面右上角找到 Fork 并点击
 
