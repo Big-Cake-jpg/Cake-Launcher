@@ -60,17 +60,19 @@ namespace Cake_Launcher
                     launchOptions.Authenticator = new OfflineAuthenticator(Offline.UserID.Text);
                     break;
                 case 2:
-                    launchOptions.Authenticator = new YggdrasilLogin(Mojang.MojangEmail.Text,Mojang.MojangPassword.Password,false);
+                    launchOptions.Authenticator = new YggdrasilLogin(Mojang.MojangEmail.Text, Mojang.MojangPassword.Password, false);
                     break;
             }
 
             launchOptions.MaxMemory = Convert.ToInt32(MemoryTextBox.Text);
-            if (versionCombo.Text!=string.Empty&&
-                JavaPathCombo.Text!=string.Empty&&
-                (Offline.UserID.Text ||(Mojang.MojangEmail.Text != string.Empty &&
-                Mojang.MojangPassword.Password != string.Empty &&
-                MemoryTextBox.Text != string.Empty)))
-            {
+            if(
+                (versionCombo.Text != string.Empty &&
+                JavaPathCombo.Text != string.Empty &&
+                (Offline.UserID.Text != string.Empty || (Mojang.MojangEmail.Text != string.Empty && Mojang.MojangPassword.Password != string.Empty) &&
+                MemoryTextBox.Text != string.Empty))
+            )
+              
+            
                 try
                 {
                     Core.JavaPath = (string)JavaPathCombo.SelectedItem;
@@ -106,6 +108,7 @@ namespace Cake_Launcher
                     System.Windows.MessageBox.Show("启动失败", "错误");
                 }
             }
+        }
             else
             {
                 System.Windows.MessageBox.Show("信息未填完整", "错误");

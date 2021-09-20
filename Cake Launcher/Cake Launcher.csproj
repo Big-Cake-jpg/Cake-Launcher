@@ -426,7 +426,7 @@
     <Resource Include="Cake Launcher.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="QQ图片20210827152255.png" />
+    <Resource Include="background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
