@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using microsoft_launcher;
 
 namespace Cake_Launcher.LoginUI
 {
@@ -23,6 +24,9 @@ namespace Cake_Launcher.LoginUI
         public Microsoft()
         {
             InitializeComponent();
+            MicrosoftAPIs microsoftAPIs = new MicrosoftAPIs();
+            microsoftAPIs.SuppressWininetBehavior();
+            browser.Source = microsoftAPIs.loginWebsite;
         }
     }
 }

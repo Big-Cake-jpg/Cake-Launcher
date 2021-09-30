@@ -5,15 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Cake_Launcher.LoginUI"
       mc:Ignorable="d" 
-      d:DesignHeight="200" d:DesignWidth="200"
+      d:DesignHeight="414" d:DesignWidth="271"
       Title="Offline">
     <Page.Background>
         <ImageBrush/>
     </Page.Background>
 
     <Grid>
-        
-        <TextBox x:Name="UserID" Text="用户名" HorizontalAlignment="Center" Height="41" Margin="0,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AutomationProperties.HelpText="输入你的用户名" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Background="#CC0078D7" Foreground="White"/>
+
+        <TextBox x:Name="UserID" Text="用户名" HorizontalAlignment="Center" Height="41" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AutomationProperties.HelpText="输入你的用户名" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Background="#CC0078D7" Foreground="White"/>
 
     </Grid>
 </Page>

@@ -18,6 +18,8 @@ using KMCCC.Authentication;
 using System.Windows.Forms;
 using KMCCC.Tools;
 using Cake_Launcher.LoginUI;
+using SquareMinecraftLauncher;
+using microsoft_launcher;
 
 namespace Cake_Launcher
 {
@@ -30,7 +32,7 @@ namespace Cake_Launcher
         LoginUI.Offline Offline = new LoginUI.Offline();
         LoginUI.Mojang Mojang = new LoginUI.Mojang();
         LoginUI.Microsoft Microsoft = new LoginUI.Microsoft();
-        public int launchMode;
+        public int launchMode = 1;
         SquareMinecraftLauncher.Minecraft.Tools tools = new SquareMinecraftLauncher.Minecraft.Tools();
         public static LauncherCore Core = LauncherCore.Create();
 
@@ -39,9 +41,8 @@ namespace Cake_Launcher
             InitializeComponent();
             var versions = Core.GetVersions().ToArray();
             versionCombo.ItemsSource = versions;
-            versionCombo.DisplayMemberPath = "Id";
-            List<String> javaList = new List<String>();
-            foreach (string i in KMCCC.Tools.SystemTools.FindJava())
+            List<string> javaList = new List<string>();
+            foreach(string i in KMCCC.Tools.SystemTools.FindJava())
             {
                 javaList.Add(i);
             }
@@ -51,7 +52,7 @@ namespace Cake_Launcher
             versionCombo.SelectedItem = versionCombo.Items[0];
         }
 
-        public void StartGame()
+        public async void StartGame()
         {
             LaunchOptions launchOptions = new LaunchOptions();
             switch (launchMode)
@@ -65,16 +66,16 @@ namespace Cake_Launcher
             }
 
             launchOptions.MaxMemory = Convert.ToInt32(MemoryTextBox.Text);
-            if(
-                (versionCombo.Text != string.Empty &&
+            if (versionCombo.Text != string.Empty &&
                 JavaPathCombo.Text != string.Empty &&
                 (Offline.UserID.Text != string.Empty || (Mojang.MojangEmail.Text != string.Empty && Mojang.MojangPassword.Password != string.Empty) &&
                 MemoryTextBox.Text != string.Empty))
-            )
-              
-            
+            { 
+
                 try
                 {
+                    if (launchMode != 3)
+                    {
                     Core.JavaPath = (string)JavaPathCombo.SelectedItem;
                     var ver = (KMCCC.Launcher.Version)versionCombo.SelectedItem;
                     launchOptions.Version = ver;
@@ -102,13 +103,26 @@ namespace Cake_Launcher
                                 break;
                         }
                     }
+                    }
+                    else
+                    {
+                        microsoft_launcher.MicrosoftAPIs microsoftAPIs = new microsoft_launcher.MicrosoftAPIs();
+                        var v = Microsoft.browser.Source.ToString().Replace(microsoftAPIs.cutUri,string.Empty);
+                        var t = Task.Run(() =>{
+                            return microsoftAPIs.GetAccessTokenAsync(v,false).Result;
+                        });
+                        await t;
+                        var v1 = microsoftAPIs.GetAllThings(t.Result.access_token, false);
+                        SquareMinecraftLauncher.Minecraft.Game game = new SquareMinecraftLauncher.Minecraft.Game();
+                        await game.StartGame(versionCombo.Text, JavaPathCombo.Text, Convert.ToInt32(MemoryTextBox.Text), v1.name, v1.uuid, v1.mcToken, string.Empty, string.Empty);
+                    }
+
                 }
                 catch
                 {
                     System.Windows.MessageBox.Show("启动失败", "错误");
                 }
             }
-        }
             else
             {
                 System.Windows.MessageBox.Show("信息未填完整", "错误");
@@ -127,15 +141,15 @@ namespace Cake_Launcher
         /// <summary>微软正版
         private void TileClick_Microsoft(object sender, RoutedEventArgs e)
         {
-
+            LoginContent.Content = new Frame
             {
-
-            }
+                Content = Microsoft
+            };
             launchMode = 3;
         }
 
         /// <summary>离线登录
-        private void TileClick_Offline(object sender,RoutedEventArgs e)
+        private void TileClick_Offline(object sender, RoutedEventArgs e)
         {
             LoginContent.Content = new Frame
             {
@@ -145,7 +159,7 @@ namespace Cake_Launcher
         }
 
         /// <summary>Mojang 正版
-        private void TileClick_Mojang(object sender,RoutedEventArgs e)
+        private void TileClick_Mojang(object sender, RoutedEventArgs e)
         {
             LoginContent.Content = new Frame
             {

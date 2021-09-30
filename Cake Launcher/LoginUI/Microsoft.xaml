@@ -5,10 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Cake_Launcher.LoginUI"
       mc:Ignorable="d" 
-      d:DesignHeight="200" d:DesignWidth="200"
+      d:DesignHeight="414" d:DesignWidth="271"
       Title="Microsoft">
 
     <Grid>
-        
+        <WebBrowser x:Name="browser">
+            
+        </WebBrowser>
     </Grid>
 </Page>
