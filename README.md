@@ -7,6 +7,8 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/Big-Cake-jpg/Cake-Launcher?label=Contributors&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Big-Cake-jpg/Cake-Launcher?label=Last%20commit&style=flat-square)
 ![GitHub Author](https://img.shields.io/badge/Author-Big__Cake-blue?style=flat-square)
+![GitHub Repo stars](https://img.shields.io/github/stars/Big-Cake-jpg/Cake-Launcher?label=Stars&style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/Big-Cake-jpg/Cake-Launcher?label=Forks&style=flat-square)
 
 ## 这是什么？
 
