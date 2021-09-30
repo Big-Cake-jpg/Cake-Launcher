@@ -6,7 +6,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Big-Cake-jpg/Cake-Launcher?label=Repository%20Size&style=flat-square)
 ![GitHub contributors](https://img.shields.io/github/contributors/Big-Cake-jpg/Cake-Launcher?label=Contributors&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Big-Cake-jpg/Cake-Launcher?label=Last%20commit&style=flat-square)
-![GitHub Author](https://img.shields.io/badge/Author-Big__Cake-blue)
+![GitHub Author](https://img.shields.io/badge/Author-Big__Cake-blue?style=flat-square)
 
 ## 这是什么？
 
