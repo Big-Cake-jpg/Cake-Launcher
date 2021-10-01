@@ -1,16 +1,16 @@
 ﻿<Page x:Class="Cake_Launcher.LoginUI.Microsoft"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Cake_Launcher.LoginUI"
-      mc:Ignorable="d" 
-      d:DesignHeight="414" d:DesignWidth="271"
-      Title="Microsoft">
-
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cake_Launcher.LoginUI"
+        mc:Ignorable="d"
+        Title="Microsoft 账户登录" Height="565" Width="1245">
     <Grid>
+        <mah:MetroProgressBar HorizontalAlignment="Center" Height="82" VerticalAlignment="Top" Width="450"/>
         <WebBrowser x:Name="browser">
-            
+
         </WebBrowser>
     </Grid>
 </Page>

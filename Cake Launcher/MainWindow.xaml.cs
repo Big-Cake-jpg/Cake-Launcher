@@ -19,7 +19,6 @@ using System.Windows.Forms;
 using KMCCC.Tools;
 using Cake_Launcher.LoginUI;
 using SquareMinecraftLauncher;
-using microsoft_launcher;
 
 namespace Cake_Launcher
 {
@@ -29,8 +28,8 @@ namespace Cake_Launcher
     public partial class MainWindow
     {
 
-        LoginUI.Offline Offline = new LoginUI.Offline();
-        LoginUI.Mojang Mojang = new LoginUI.Mojang();
+        Offline Offline = new Offline();
+        Mojang Mojang = new Mojang();
         LoginUI.Microsoft Microsoft = new LoginUI.Microsoft();
         public int launchMode = 1;
         SquareMinecraftLauncher.Minecraft.Tools tools = new SquareMinecraftLauncher.Minecraft.Tools();
@@ -107,9 +106,10 @@ namespace Cake_Launcher
                     else
                     {
                         microsoft_launcher.MicrosoftAPIs microsoftAPIs = new microsoft_launcher.MicrosoftAPIs();
-                        var v = Microsoft.browser.Source.ToString().Replace(microsoftAPIs.cutUri,string.Empty);
-                        var t = Task.Run(() =>{
-                            return microsoftAPIs.GetAccessTokenAsync(v,false).Result;
+                        var v = Microsoft.browser.Source.ToString().Replace(microsoftAPIs.cutUri, string.Empty);
+                        var t = Task.Run(() =>
+                        {
+                            return microsoftAPIs.GetAccessTokenAsync(v, false).Result;
                         });
                         await t;
                         var v1 = microsoftAPIs.GetAllThings(t.Result.access_token, false);
@@ -141,9 +141,10 @@ namespace Cake_Launcher
         /// <summary>微软正版
         private void TileClick_Microsoft(object sender, RoutedEventArgs e)
         {
-            LoginContent.Content = new Frame
+            MetroNavigationWindow window = new MetroNavigationWindow();
             {
-                Content = Microsoft
+                window.Source = new Uri("/LoginUI/Microsoft.xaml", UriKind.Relative);
+                window.Show();
             };
             launchMode = 3;
         }
