@@ -1,4 +1,9 @@
-﻿# Cake Launcher | CakeMC 服务器专用启动器
+- **简体中文**
+- [English](https://github.com/Big-Cake-jpg/Cake-Launcher/blob/dev/README-en.md)
+
+<img src="https://cdn.jsdelivr.net/gh/Big-Cake-jpg/Image_For_My_Blog/launcher-develop/cake-launcher.png" align="center"></img>
+
+﻿<h1 align="center">Cake Launcher | Minecraft 启动器</h1>
 
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Big-Cake-jpg/Cake-Launcher?label=Pull%20Requests&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/Big-Cake-jpg/Cake-Launcher?label=Issues&style=flat-square)
