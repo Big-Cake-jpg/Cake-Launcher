@@ -10,7 +10,7 @@
 <img align="center" alt="GitHub" src="https://img.shields.io/github/license/Big-Cake-jpg/Cake-Launcher?label=License&style=flat-square">
 <img align="center" alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Big-Cake-jpg/Cake-Launcher?label=Repository%20Size&style=flat-square">
 <img align="center" alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Big-Cake-jpg/Cake-Launcher?label=Last%20commit&style=flat-square">
-<img align="center" alt="https://img.shields.io/badge/Author-Big__Cake-blue?style=flat-square">
+<img align="center" src="https://img.shields.io/badge/Author-Big__Cake-blue?style=flat-square">
 <img align="center" alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Big-Cake-jpg/Cake-Launcher?label=Stars&style=flat-square">
 <img alt="GitHub forks" src="https://img.shields.io/github/forks/Big-Cake-jpg/Cake-Launcher?label=Forks&style=flat-square"> 
 
