@@ -8,40 +8,14 @@
         xmlns:Custom="http://metro.mahapps.com/winfx/xaml/iconpacks" x:Class="Cake_Launcher.MainWindow"
         mc:Ignorable="d"
         Title="Cake Launcher" Height="450" Width="800" NonActiveGlowBrush="Red" GlowBrush="#CC0078D7" TitleCharacterCasing="Normal" ResizeMode="NoResize" Icon="/Cake Launcher.ico" IsMinButtonEnabled="True" IsMaxRestoreButtonEnabled="False">
-    <mah:MetroWindow.Resources>
-        <Storyboard x:Key="News-Center-Tile">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-0.5"/>
-                <DiscreteDoubleKeyFrame KeyTime="00:00:01" Value="-0.5"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-0.5"/>
-                <DiscreteDoubleKeyFrame KeyTime="00:00:04" Value="-0.5"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:05.5000000" Value="-0.5"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-102.96"/>
-                <DiscreteDoubleKeyFrame KeyTime="00:00:01" Value="-103.96"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-252.96"/>
-                <DiscreteDoubleKeyFrame KeyTime="00:00:04" Value="-253.96"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:05.5000000" Value="-102.96"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-    </mah:MetroWindow.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="https://pic.liesio.com/2021/08/08/8f31f0aada603.jpg"/>
+            <ImageBrush ImageSource="https://shenzilong.cn/util/redirect_to_bing_daily_picture_address"/>
         </Grid.Background>
 
         <mah:Tile HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="148" FontFamily="Segoe UI" Title="资讯中心" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Grid Width="147" Height="294">
-                <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5" Margin="0,103,0,-103">
-                    <Grid.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Grid.RenderTransform>
+                <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
                     <TextBlock Margin="10,10,10,241" TextWrapping="Wrap" Text="启动器仍处于早期开发与测试阶段" FontSize="14"/>
                     <TextBlock Margin="0,58,0,200" TextWrapping="Wrap" Text="感谢大家一直以来对 CakeMC 的支持" HorizontalAlignment="Center" Width="127" FontSize="14"/>
                     <TextBlock Margin="0,163,0,80" TextWrapping="Wrap" Text="本启动器大部分功能仍在开发，敬请期待" HorizontalAlignment="Center" Width="127" FontSize="14"/>

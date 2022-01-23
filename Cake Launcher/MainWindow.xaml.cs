@@ -45,7 +45,6 @@ namespace Cake_Launcher
             {
                 javaList.Add(i);
             }
-            javaList.Add(tools.GetJavaPath());
             JavaPathCombo.ItemsSource = javaList;
             JavaPathCombo.SelectedItem = JavaPathCombo.Items[0];
             versionCombo.SelectedItem = versionCombo.Items[0];
