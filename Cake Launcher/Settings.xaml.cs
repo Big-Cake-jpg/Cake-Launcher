@@ -23,6 +23,11 @@ namespace Cake_Launcher
         public Settings()
         {
             InitializeComponent();
+            
+        }
+        private void TileClick_Settings_Network(object sender, RoutedEventArgs e)
+        {
+            Page Network = new Page();
         }
     }
 }

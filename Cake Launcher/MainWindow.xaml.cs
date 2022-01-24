@@ -14,9 +14,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using System.Windows.Forms;
-using KMCCC.Tools;
 using Cake_Launcher.LoginUI;
 using SquareMinecraftLauncher;
+using microsoft_launcher;
+using SquareMinecraftLauncher.Minecraft;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Cake_Launcher
 {
@@ -26,76 +30,128 @@ namespace Cake_Launcher
     public partial class MainWindow
     {
 
-        Offline Offline = new Offline();
-        Mojang Mojang = new Mojang();
+        LoginUI.Offline Offline = new LoginUI.Offline();
         LoginUI.Microsoft Microsoft = new LoginUI.Microsoft();
-        SquareMinecraftLauncher.Minecraft.Game game = new SquareMinecraftLauncher.Minecraft.Game();
+        LoginUI.Mojang Mojang = new LoginUI.Mojang();
         public int launchMode = 1;
+        microsoft_launcher.MicrosoftAPIs microsoftAPIs = new microsoft_launcher.MicrosoftAPIs();
+        SquareMinecraftLauncher.Minecraft.Game game = new SquareMinecraftLauncher.Minecraft.Game();
         SquareMinecraftLauncher.Minecraft.Tools tools = new SquareMinecraftLauncher.Minecraft.Tools();
+        SquareMinecraftLauncher.MinecraftDownload minecraftDownload = new SquareMinecraftLauncher.MinecraftDownload();
 
-        public MainWindow()
+        Setting setting = new Setting();
+
+        string SettingPath = @"cakelauncher.json";
+
+        public class Setting
         {
-            InitializeComponent();
-            var versions = tools.GetAllTheExistingVersion();
-            versionCombo.ItemsSource = versions;
-            List<string> javaList = new List<string>();
-            foreach(string i in KMCCC.Tools.SystemTools.FindJava())
-            {
-                javaList.Add(i);
-            }
-            javaList.Add(tools.GetJavaPath());
-            JavaPathCombo.ItemsSource = javaList;
-            JavaPathCombo.SelectedItem = JavaPathCombo.Items[0];
-            versionCombo.SelectedItem = versionCombo.Items[0];
+            public string RAM = "1024";
         }
 
-        public async void StartGame()
-            switch (launchMode)
+        public void LauncherInitialization()
+        {
+            if (!File.Exists(SettingPath))
             {
-                case 1:
-                    await game.StartGame();
-                    break
-            }
-
-            
-            if (versionCombo.Text != string.Empty &&
-                JavaPathCombo.Text != string.Empty &&
-                (Offline.UserID.Text != string.Empty || (Mojang.MojangEmail.Text != string.Empty && Mojang.MojangPassword.Password != string.Empty) &&
-                MemoryTextBox.Text != string.Empty))
-            { 
-
-                try
-                {
-                    
-                    
-                    
-                    {
-                        microsoft_launcher.MicrosoftAPIs microsoftAPIs = new microsoft_launcher.MicrosoftAPIs();
-                        var v = Microsoft.browser.Source.ToString().Replace(microsoftAPIs.cutUri, string.Empty);
-                        var t = Task.Run(() =>
-                        {
-                            return microsoftAPIs.GetAccessTokenAsync(v, false).Result;
-                        });
-                        await t;
-                        var v1 = microsoftAPIs.GetAllThings(t.Result.access_token, false);
-                        
-                        
-                    }
-
-                }
-                catch
-                {
-                    System.Windows.MessageBox.Show("启动失败", "错误");
-                }
+                File.WriteAllText(SettingPath, JsonConvert.SerializeObject(setting));
             }
             else
             {
-                System.Windows.MessageBox.Show("信息未填完整", "错误");
+                setting = JsonConvert.DeserializeObject<Setting>(File.ReadAllText(SettingPath));        
             }
         }
+        public MainWindow()
+        {
+            InitializeComponent();
+            LauncherInitialization();
+            ServicePointManager.DefaultConnectionLimit = 512;
+            var versions = tools.GetAllTheExistingVersion();
+            versionCombo.ItemsSource = versions;
+            JavaPathCombo.ItemsSource = tools.GetJavaPath();
+            if (versionCombo.SelectedItem != null)
+            versionCombo.SelectedItem = versionCombo.Items[0];
+            if (JavaPathCombo.SelectedItem != null)
+            JavaPathCombo.SelectedItem = JavaPathCombo.Items[0];
+            MemoryTextBox.Text = setting.RAM;
+        }
+        #region
+        //public void CompleteFile()
+        //{
+        //    try
+        //    {
+        //        tools.DownloadSourceInitialization(DownloadSource.bmclapiSource);
+        //        var v = tools.GetMissingFile(versionCombo.SelectedValue.ToString());
+        //        Gac.DownLoadFile downLoadFile = new Gac.DownLoadFile();
+        //        foreach (var i in v)
+        //        {
+        //            downLoadFile.AddDown(i.Url, i.path);
+        //        }
+        //        downLoadFile.StartDown(0);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        System.Windows.MessageBox.Show(e.ToString(), "补全文件失败");
+        //    }
+        //}
+        #endregion
+
+        public async void GameStart()
+        {
+            try
+            {
+                if (startbutton.Content.ToString() == "确认启动吗？")
+                {
+                    startbutton.Content = "Stage 1 - 补全文件";
+                    //CompleteFile();
+                    if (versionCombo.Text != string.Empty &&
+                        JavaPathCombo.Text != string.Empty &&
+                        (Offline.UserID.Text != string.Empty || Mojang.MojangEmail.Text != string.Empty && Mojang.MojangPassword.Password != string.Empty &&
+                        MemoryTextBox.Text != string.Empty))
+                    {
+                        switch (launchMode)
+                        {
+                            case 1:
+                                startbutton.Content = "Stage 2 - 启动游戏";
+                                await game.StartGame(versionCombo.Text, JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(MemoryTextBox.Text), Offline.UserID.Text);
+                                break;
+                            case 2:
+                                startbutton.Content = "Stage 2 - Mojang 正版登录";
+                                await game.StartGame(versionCombo.Text, JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(MemoryTextBox.Text), Mojang.MojangEmail.Text, Mojang.MojangPassword.Password);
+                                break;
+                            case 3:
+                                startbutton.Content = "Stage 2 - 微软正版登录";
+                                microsoft_launcher.MicrosoftAPIs microsoftAPIs = new microsoft_launcher.MicrosoftAPIs();
+                                var v = Microsoft.browser.Source.ToString().Replace(microsoftAPIs.cutUri, string.Empty);
+                                var t = Task.Run(() =>
+                                {
+                                    return microsoftAPIs.GetAccessTokenAsync(v, false).Result;
+                                });
+                                await t;
+                                var v1 = microsoftAPIs.GetAllThings(t.Result.access_token, false);
+                                startbutton.Content = "Stage 3 - 启动游戏";
+                                await game.StartGame(versionCombo.Text, JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(MemoryTextBox.Text), v1.name, v1.uuid, v1.mcToken, string.Empty, string.Empty);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("信息未填完整", "错误");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                System.Windows.MessageBox.Show("启动失败" + e.Message, "错误");
+            }
+            finally
+            {
+                startbutton.Content = "确认启动吗？";
+            }
+        }
+
+
         private void ButtonClick_StartGame(object sender, RoutedEventArgs e)
         {
-            StartGame();
+            GameStart();
         }
 
         private void TileClick_OpenHelp(object sender, RoutedEventArgs e)
@@ -106,10 +162,10 @@ namespace Cake_Launcher
         /// <summary>微软正版
         private void TileClick_Microsoft(object sender, RoutedEventArgs e)
         {
-            MetroNavigationWindow window = new MetroNavigationWindow();
+            Window Microsoft = new Window();
             {
-                window.Source = new Uri("/LoginUI/Microsoft.xaml", UriKind.Relative);
-                window.Show();
+                Microsoft.Content = "/LoginUI/Microsoft.xaml";
+                Microsoft.Show();
             };
             launchMode = 3;
         }
@@ -132,6 +188,11 @@ namespace Cake_Launcher
                 Content = Mojang
             };
             launchMode = 2;
+        }
+        private void TileClick_OpenSettings(object sender, RoutedEventArgs e)
+        {
+            Page Settings = new Page();
+            Settings.Content = "/Settings.xaml";
         }
     }
 }

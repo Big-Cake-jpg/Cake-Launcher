@@ -68,22 +68,20 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Cake Launcher.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=5.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.5.0.1\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.5.0, Culture=neutral, PublicKeyToken=9dea7c6e17aa31ff, processorArchitecture=MSIL">
-      <HintPath>..\packages\ICSharpCode.SharpZipLib.Patched.1.2.0.9\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Downloader, Version=2.3.1.0, Culture=neutral, PublicKeyToken=844973e732f6cdf4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Downloader.2.3.1\lib\net452\Downloader.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.2.4.9\lib\net47\MahApps.Metro.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\MahApps.Metro.2.3.2\lib\net47\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.4.11.0\lib\net47\MahApps.Metro.IconPacks.dll</HintPath>
@@ -226,16 +224,15 @@
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="microsoft_launcherx64">
-      <HintPath>D:\Users\Administrator\Documents\Tencent Files\3068342155\FileRecv\microsoft_launcherx64.dll</HintPath>
+      <HintPath>.\microsoft_launcherx64.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SquareMinecraftLauncherCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=d24359967f04e947, processorArchitecture=MSIL">
-      <HintPath>..\packages\SquareMinecraftLauncher.Core.3.8.0\lib\net452\SquareMinecraftLauncherCore.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="SquareMinecraftLauncherCore, Version=3.9.1.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\SquareMinecraftLauncher.Core.3.9.4\lib\net452\SquareMinecraftLauncherCore.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -404,7 +401,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="KMCCC\Tools\FindJava.cs" />
+    <Compile Include="Game\StartGame.cs" />
     <Compile Include="LoginUI\Microsoft.xaml.cs">
       <DependentUpon>Microsoft.xaml</DependentUpon>
     </Compile>
@@ -464,7 +461,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Cake Launcher_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -487,13 +483,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Cake Launcher.ico" />
+    <Analyzer Include="bin\Debug\microsoft_launcherx64.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mojang.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="bin\Debug\microsoft_launcherx64.dll" />
+    <Resource Include="icon.ico" />
+    <Resource Include="store.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
