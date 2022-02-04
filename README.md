@@ -38,6 +38,6 @@
 
 ## 无法启动？
 
-本启动器至少需要 .NET Framework 4.7.2，未来的 WinUI 3 版本则需要 .NET Core 5。
+本启动器至少需要 .NET Framework 4.7.2，未来的 WinUI 3 版本最低需要 .NET Core 5 和 Windows 10 1809
 
 在启动或贡献代码之前请先检查你的电脑是否安装了上述运行环境
