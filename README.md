@@ -18,7 +18,7 @@
 
 ## 这是什么？
 
-这是 `CakeMC` 服务器的专用启动器 `Cake Launcher` 的代码仓库
+这是一个全新的 Metro 风格 Minecraft 启动器 `Cake Launcher` 的代码仓库
 
 我们**希望有能力的大佬来贡献**
 
