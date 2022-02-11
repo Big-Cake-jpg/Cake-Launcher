@@ -44,4 +44,4 @@
 
 ## 友情链接
 
-[FluentCore](https://github.com/Xcube-Studio/FluentCore)
+[FluentCore](https://github.com/Xcube-Studio/FluentCore) | [Fluent-Launcher](https://github.com/Xcube-Studio/Fluent-Launcher)
