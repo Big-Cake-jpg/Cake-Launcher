@@ -42,6 +42,6 @@
 
 在启动或贡献代码之前请先检查你的电脑是否安装了上述运行环境
 
-##友情链接
+## 友情链接
 
 [FluentCore](https://github.com/Xcube-Studio/FluentCore)
