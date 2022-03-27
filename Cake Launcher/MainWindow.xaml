@@ -7,59 +7,48 @@
         xmlns:local="clr-namespace:Cake_Launcher"
         xmlns:Custom="http://metro.mahapps.com/winfx/xaml/iconpacks" x:Class="Cake_Launcher.MainWindow"
         mc:Ignorable="d"
-        Title="Cake Launcher" Height="450" Width="800" NonActiveGlowBrush="Red" GlowBrush="#CC0078D7" TitleCharacterCasing="Normal" Icon="/icon.ico" IsMinButtonEnabled="True" IsMaxRestoreButtonEnabled="False" ResizeMode="CanMinimize">
+        Title="Cake Launcher PREVIEW" Height="450" Width="800" NonActiveGlowBrush="Red" GlowBrush="#CC0078D7" TitleCharacterCasing="Normal" Icon="/icon.ico" IsMinButtonEnabled="True" IsMaxRestoreButtonEnabled="False" ResizeMode="CanMinimize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/background.png"/>
         </Grid.Background>
 
-        <mah:Tile HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="148" FontFamily="Segoe UI" Title="资讯中心" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+        <mah:Tile x:Name="NewsCenter" HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="148" FontFamily="Microsoft YaHei UI" Title="资讯中心" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Custom:PackIconModern Kind="Newspaper" Height="62" Width="62"/>
         </mah:Tile>
-        <mah:Tile Click="TileClick_OpenHelp" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="148" FontFamily="Segoe UI" Margin="40,222,0,0" Title="帮助" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
-            <Custom:PackIconModern Height="30" Width="30" Kind="BookPerspectiveHelp"/>
+        <mah:Tile Click="TileClick_OpenHelp" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="148" FontFamily="Microsoft YaHei UI" Margin="40,222,0,0" Title="帮助" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+            <Custom:PackIconModern Height="30" Width="30" Kind="BookPerspectiveHelp" HorizontalAlignment="Center"/>
         </mah:Tile>
-        <mah:Tile Click="TileClick_OpenSettings" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="73" FontFamily="Segoe UI" Margin="40,300,0,0" Title="设置" BorderBrush="#FF848484" Background="#CC0078D7" AutomationProperties.Name="Settings" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
-            <Custom:PackIconModern Width="43" Kind="Settings" Height="30" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" >
-                <Custom:PackIconModern.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleY="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Custom:PackIconModern.RenderTransform>
-            </Custom:PackIconModern>
+        <mah:Tile x:Name="Settings" Click="TileClick_OpenSettings" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="73" FontFamily="Microsoft YaHei UI" Margin="40,300,0,0" Title="设置" BorderBrush="#FF848484" Background="#CC0078D7" AutomationProperties.Name="Settings" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+            <Custom:PackIconModern Width="25" Kind="Settings" Height="25" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" />
         </mah:Tile>
-        <TextBlock HorizontalAlignment="Left" Margin="40,10,0,0" TextWrapping="Wrap" Text="开始" VerticalAlignment="Top" Height="55" Width="73" Foreground="White" FontSize="36" FontFamily="Segoe UI"/>
-        <mah:Tile HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" FontFamily="Segoe UI" Margin="118,300,0,0" BorderBrush="#FF848484" FontSize="12" ToolTip="切换版本" AutomationProperties.HelpText="切换版本" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+        <TextBlock HorizontalAlignment="Left" Margin="40,10,0,0" TextWrapping="Wrap" Text="开始" VerticalAlignment="Top" Height="55" Width="73" Foreground="White" FontSize="36" FontFamily="Microsoft YaHei UI"/>
+        <mah:Tile x:Name="SelectVersion" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" FontFamily="Microsoft YaHei UI" Margin="118,300,0,0" BorderBrush="#FF848484" FontSize="12" ToolTip="切换版本" AutomationProperties.HelpText="切换版本" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Custom:PackIconFontAwesome Height="21" Width="21" Kind="ExchangeAltSolid" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </mah:Tile>
-        <mah:Tile x:Name="startbutton" Title="启动游戏" Click="ButtonClick_StartGame" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="146" FontFamily="Segoe UI" Margin="193,222,0,0" BorderBrush="#FF848484" FontSize="12" AutomationProperties.HelpText="启动游戏" Background="#CC0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
-            <Custom:PackIconFontAwesome Height="32" Width="32" Kind="BurnSolid"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <mah:Tile x:Name="startbutton" Title="启动游戏" Click="ButtonClick_StartGame" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="146" FontFamily="Microsoft YaHei UI" Margin="193,222,0,0" BorderBrush="#FF848484" FontSize="12" AutomationProperties.HelpText="启动游戏" Background="#CC0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+            <Custom:PackIconFontAwesome Height="25" Width="25" Kind="BurnSolid" />
         </mah:Tile>
         <ComboBox HorizontalAlignment="Left" Height="32" Margin="192,106,0,0" VerticalAlignment="Top" Width="201" DisplayMemberPath="Version" SelectedValue="IdVersion" Background="#CC0078D7" x:Name="versionCombo" Foreground="White"/>
-        <ComboBox x:Name="JavaPathCombo" HorizontalAlignment="Left" Height="32" Margin="192,69,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI" FontSize="16" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
-        <TextBox x:Name="MemoryTextBox" Text="1024" HorizontalAlignment="Left" Height="32" Margin="192,143,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI" FontSize="16" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2">
+        <ComboBox x:Name="JavaPathCombo" HorizontalAlignment="Left" Height="32" Margin="192,69,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="16" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
+        <TextBox x:Name="MemoryTextBox" Text="1024" HorizontalAlignment="Left" Height="32" Margin="192,143,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="16" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2">
         </TextBox>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="400,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="Java 路径"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="400,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="选择版本"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="400,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="最大内存（MB）"/></TextBlock>
         <ContentControl x:Name="LoginContent" HorizontalAlignment="Left" Height="414" VerticalAlignment="Center" Width="271" Margin="519,0,0,0"/>
-        <mah:Tile Click="TileClick_Microsoft" HorizontalAlignment="Left" Height="34" Margin="118,338,0,0" VerticalAlignment="Top" Width="33" ToolTip="微软正版" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
-            <Custom:PackIconModern Width="20" Height="20" Kind="SocialMicrosoft" VerticalAlignment="Center"/>
+        <mah:Tile Title="微软正版登录" Click="TileClick_Microsoft" HorizontalAlignment="Left" Height="71" Margin="193,301,0,0" VerticalAlignment="Top" Width="146" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" FontSize="16" FontWeight="Normal">
+            <Custom:PackIconModern Width="25" Height="25" Kind="SocialMicrosoft" HorizontalAlignment="Center"/>
         </mah:Tile>
         <mah:Tile Click="TileClick_Offline" HorizontalAlignment="Left" Height="34" Margin="155,338,0,0" VerticalAlignment="Top" Width="33" ToolTip="离线登录" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Custom:PackIconMaterialDesign Width="20" Height="20" Kind="AccountCircle" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </mah:Tile>
-        <mah:Tile Click="TileClick_Mojang" HorizontalAlignment="Left" Height="72" Margin="193,300,0,0" VerticalAlignment="Top" Width="146" Title="Mojang 正版" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
-            <Image Height="37" Width="37" VerticalAlignment="Top" Source="/mojang.png" />
+        <mah:Tile x:Name="MojangYggdrasil" Click="TileClick_Mojang" HorizontalAlignment="Left" Height="33" Margin="155,300,0,0" VerticalAlignment="Top" Width="33" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+            <Image Height="20" Width="20" VerticalAlignment="Center" Source="/mojang.png" ToolTip="Mojang 正版登录" />
         </mah:Tile>
-        <mah:Tile HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" FontFamily="Segoe UI" Margin="155,300,0,0" BorderBrush="#FF848484" FontSize="12" ToolTip="切换版本" AutomationProperties.HelpText="切换版本" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
-            <Custom:PackIconFontAwesome Height="21" Width="21" Kind="ExchangeAltSolid" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </mah:Tile>
-        <mah:Tile HorizontalAlignment="Left" Height="150" Margin="344,222,0,0" VerticalAlignment="Top" Width="148" FontFamily="Segoe UI" Title="下载中心" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+        <mah:Tile x:Name="DownloadCenter" HorizontalAlignment="Left" Height="150" Margin="344,222,0,0" VerticalAlignment="Top" Width="148" FontFamily="Microsoft YaHei UI" Title="下载中心" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Image Source="/store.png" Height="74" Width="74"/>
         </mah:Tile>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="127,34,0,0" TextWrapping="Wrap" Text="欢迎使用 Cake Launcher！点按下面的磁贴来使用更多功能" VerticalAlignment="Top" Width="316" Foreground="White"/>
     </Grid>
 </mah:MetroWindow>

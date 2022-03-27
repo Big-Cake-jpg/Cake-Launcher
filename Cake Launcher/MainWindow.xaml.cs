@@ -46,6 +46,7 @@ namespace Cake_Launcher
         public class Setting
         {
             public string RAM = "1024";
+/// public string OfflineUser = Offline.UserID.Text;
         }
 
         public void LauncherInitialization()
@@ -162,9 +163,9 @@ namespace Cake_Launcher
         /// <summary>微软正版
         private void TileClick_Microsoft(object sender, RoutedEventArgs e)
         {
-            Window Microsoft = new Window();
+            MetroNavigationWindow Microsoft = new MetroNavigationWindow();
             {
-                Microsoft.Content = "/LoginUI/Microsoft.xaml";
+                Microsoft.Source = new Uri("/LoginUI/Microsoft.xaml", UriKind.Relative);
                 Microsoft.Show();
             };
             launchMode = 3;
