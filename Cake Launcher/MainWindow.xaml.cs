@@ -46,7 +46,7 @@ namespace Cake_Launcher
         public class Setting
         {
             public string RAM = "1024";
-/// public string OfflineUser = Offline.UserID.Text;
+            ///public string OfflineUser = Convert.ToInt32(Offline.UserID.Text);
         }
 
         public void LauncherInitialization()
@@ -68,9 +68,9 @@ namespace Cake_Launcher
             var versions = tools.GetAllTheExistingVersion();
             versionCombo.ItemsSource = versions;
             JavaPathCombo.ItemsSource = tools.GetJavaPath();
-            if (versionCombo.SelectedItem != null)
+            if (versionCombo.Items.Count != 0)
             versionCombo.SelectedItem = versionCombo.Items[0];
-            if (JavaPathCombo.SelectedItem != null)
+            if (JavaPathCombo.Items.Count != 0)
             JavaPathCombo.SelectedItem = JavaPathCombo.Items[0];
             MemoryTextBox.Text = setting.RAM;
         }

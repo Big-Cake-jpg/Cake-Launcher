@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Cake_Launcher
+namespace Cake_Launcher.Pages.Settings
 {
     /// <summary>
-    /// Settings.xaml 的交互逻辑
+    /// SettingsMainPage.xaml 的交互逻辑
     /// </summary>
-    public partial class Settings : Page
+    public partial class SettingsMainPage : Page
     {
-        public Settings()
+        public SettingsMainPage()
         {
             InitializeComponent();
-            
-        }
-        private void TileClick_Settings_Network(object sender, RoutedEventArgs e)
-        {
-            Page Network = new Page();
         }
     }
 }
