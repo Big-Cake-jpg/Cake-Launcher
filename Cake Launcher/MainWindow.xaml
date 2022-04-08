@@ -7,7 +7,14 @@
         xmlns:local="clr-namespace:Cake_Launcher"
         xmlns:Custom="http://metro.mahapps.com/winfx/xaml/iconpacks" x:Class="Cake_Launcher.MainWindow"
         mc:Ignorable="d"
-        Title="Cake Launcher PREVIEW" Height="450" Width="800" NonActiveGlowBrush="Red" GlowBrush="#CC0078D7" TitleCharacterCasing="Normal" Icon="/icon.ico" IsMinButtonEnabled="True" IsMaxRestoreButtonEnabled="False" ResizeMode="CanMinimize">
+        Title="Cake Launcher PREVIEW" Height="450" Width="800" Closing="Window_Closing" NonActiveGlowBrush="Red" GlowBrush="#CC0078D7" TitleCharacterCasing="Normal" IsMinButtonEnabled="True" IsMaxRestoreButtonEnabled="False" ResizeMode="CanMinimize">
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button ToolTip="主页">
+                <Custom:PackIconModern Width="22" Height="22" Kind="Home" />
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/background.png"/>

@@ -1,26 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Cake_Launcher.LoginUI;
+using MahApps.Metro.Controls;
+using Microsoft.Win32;
+using Newtonsoft.Json;
+using System;
+using System.ComponentModel;
+using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MahApps.Metro.Controls;
-using System.Windows.Forms;
-using Cake_Launcher.LoginUI;
-using SquareMinecraftLauncher;
-using microsoft_launcher;
-using SquareMinecraftLauncher.Minecraft;
-using System.Net;
-using System.IO;
-using Newtonsoft.Json;
 
 namespace Cake_Launcher
 {
@@ -38,15 +26,16 @@ namespace Cake_Launcher
         SquareMinecraftLauncher.Minecraft.Game game = new SquareMinecraftLauncher.Minecraft.Game();
         SquareMinecraftLauncher.Minecraft.Tools tools = new SquareMinecraftLauncher.Minecraft.Tools();
         SquareMinecraftLauncher.MinecraftDownload minecraftDownload = new SquareMinecraftLauncher.MinecraftDownload();
-
         Setting setting = new Setting();
-
         string SettingPath = @"cakelauncher.json";
-
+        RegisterSetting registerSetting = new RegisterSetting();
         public class Setting
         {
             public string RAM = "1024";
-            ///public string OfflineUser = Convert.ToInt32(Offline.UserID.Text);
+        }
+        public class RegisterSetting
+        {
+            public string name = "Big_Cake";
         }
 
         public void LauncherInitialization()
@@ -57,7 +46,38 @@ namespace Cake_Launcher
             }
             else
             {
-                setting = JsonConvert.DeserializeObject<Setting>(File.ReadAllText(SettingPath));        
+                setting = JsonConvert.DeserializeObject<Setting>(File.ReadAllText(SettingPath));
+            }
+            bool isFirst = true;
+            using (RegistryKey Key1 = Registry.CurrentUser.OpenSubKey("SOFTWARE"))
+            {
+                foreach(var i in Key1.GetSubKeyNames())
+                {
+                    if (i == "Cake Launcher")
+                    {
+                        isFirst = false;
+                    }
+                }
+            }
+            if (isFirst)
+            {
+                using (RegistryKey key = Registry.CurrentUser)
+                {
+                   using (RegistryKey software = key.CreateSubKey("software\\Cake Launcher"))
+                   {
+                        software.SetValue("name", registerSetting.name);
+                   }
+                }
+            }
+            else
+            {
+                using (RegistryKey key = Registry.CurrentUser)
+                {
+                    using (RegistryKey software = key.CreateSubKey("software\\Cake Launcher"))
+                    {
+                        registerSetting.name = software.GetValue("name").ToString();
+                    }
+                }
             }
         }
         public MainWindow()
@@ -69,9 +89,9 @@ namespace Cake_Launcher
             versionCombo.ItemsSource = versions;
             JavaPathCombo.ItemsSource = tools.GetJavaPath();
             if (versionCombo.Items.Count != 0)
-            versionCombo.SelectedItem = versionCombo.Items[0];
+                versionCombo.SelectedItem = versionCombo.Items[0];
             if (JavaPathCombo.Items.Count != 0)
-            JavaPathCombo.SelectedItem = JavaPathCombo.Items[0];
+                JavaPathCombo.SelectedItem = JavaPathCombo.Items[0];
             MemoryTextBox.Text = setting.RAM;
         }
         #region
@@ -94,7 +114,6 @@ namespace Cake_Launcher
         //    }
         //}
         #endregion
-
         public async void GameStart()
         {
             try
@@ -148,18 +167,14 @@ namespace Cake_Launcher
                 startbutton.Content = "确认启动吗？";
             }
         }
-
-
         private void ButtonClick_StartGame(object sender, RoutedEventArgs e)
         {
             GameStart();
         }
-
         private void TileClick_OpenHelp(object sender, RoutedEventArgs e)
         {
 
         }
-
         /// <summary>微软正版
         private void TileClick_Microsoft(object sender, RoutedEventArgs e)
         {
@@ -170,7 +185,6 @@ namespace Cake_Launcher
             };
             launchMode = 3;
         }
-
         /// <summary>离线登录
         private void TileClick_Offline(object sender, RoutedEventArgs e)
         {
@@ -180,7 +194,6 @@ namespace Cake_Launcher
             };
             launchMode = 1;
         }
-
         /// <summary>Mojang 正版
         private void TileClick_Mojang(object sender, RoutedEventArgs e)
         {
@@ -192,8 +205,15 @@ namespace Cake_Launcher
         }
         private void TileClick_OpenSettings(object sender, RoutedEventArgs e)
         {
-            Page Settings = new Page();
-            Settings.Content = "/Settings.xaml";
+
+        }
+        private void MemoryTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            setting.RAM = MemoryTextBox.Text;
+        }
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            File.WriteAllText(SettingPath, JsonConvert.SerializeObject(setting));
         }
     }
 }

@@ -9,7 +9,7 @@
       Title="Mojang">
 
     <Grid>
-        <TextBox x:Name="MojangEmail" Height="41" Width="200" Text="账号" FontSize="14" ToolTip="填写你的 Mojang 正版账户邮箱" Margin="0,154,0,219" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#CC0078D7" Foreground="White"/>
+        <TextBox x:Name="MojangEmail" Height="41" Width="200" FontSize="14" ToolTip="填写你的 Mojang 正版账户邮箱" Margin="0,154,0,219" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#CC0078D7" Foreground="White"/>
         <PasswordBox x:Name="MojangPassword" Height="41" Width="200" FontSize="14" ToolTip="填写你的 Mojang 正版账户密码" Margin="0,200,0,173" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#CC0078D7" Foreground="White"/>
     </Grid>
 </Page>
