@@ -63,7 +63,7 @@ namespace Cake_Launcher
             {
                 using (RegistryKey key = Registry.CurrentUser)
                 {
-                   using (RegistryKey software = key.CreateSubKey("software\\Cake Launcher"))
+                   using (RegistryKey software = key.CreateSubKey("Software\\Cake Launcher"))
                    {
                         software.SetValue("name", registerSetting.name);
                    }
@@ -73,7 +73,7 @@ namespace Cake_Launcher
             {
                 using (RegistryKey key = Registry.CurrentUser)
                 {
-                    using (RegistryKey software = key.CreateSubKey("software\\Cake Launcher"))
+                    using (RegistryKey software = key.CreateSubKey("Software\\Cake Launcher"))
                     {
                         registerSetting.name = software.GetValue("name").ToString();
                     }
