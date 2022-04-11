@@ -13,7 +13,7 @@
 
     <Grid>
 
-        <TextBox x:Name="UserID" Text="用户名" HorizontalAlignment="Center" Height="41" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AutomationProperties.HelpText="输入你的用户名" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Background="#CC0078D7" Foreground="White"/>
+        <TextBox x:Name="UserID" ToolTip="填写你的离线账号用户名" HorizontalAlignment="Center" Height="41" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AutomationProperties.HelpText="输入你的用户名" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Background="#CC0078D7" Foreground="White"/>
 
     </Grid>
 </Page>

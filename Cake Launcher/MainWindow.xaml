@@ -36,13 +36,6 @@
         <mah:Tile x:Name="startbutton" Title="启动游戏" Click="ButtonClick_StartGame" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="146" FontFamily="Microsoft YaHei UI" Margin="193,300,0,0" BorderBrush="#FF848484" FontSize="12" AutomationProperties.HelpText="启动游戏" Background="#CC0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Custom:PackIconFontAwesome Height="25" Width="25" Kind="BurnSolid" />
         </mah:Tile>
-        <ComboBox HorizontalAlignment="Left" Height="32" Margin="346,102,0,0" VerticalAlignment="Top" Width="201" DisplayMemberPath="version" SelectedValuePath="IdVersion" Background="#CC0078D7" x:Name="versionCombo" Foreground="White"/>
-        <ComboBox x:Name="JavaPathCombo" DisplayMemberPath="Version" HorizontalAlignment="Left" Height="32" Margin="346,65,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="16" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
-        <TextBox x:Name="MemoryTextBox" Text="1024" HorizontalAlignment="Left" Height="32" Margin="346,139,0,0" VerticalAlignment="Top" Width="201" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="16" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2">
-        </TextBox>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="554,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="Java 路径"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="554,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="选择版本"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="554,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Foreground="White" FontSize="16"><Run Language="zh-cn" Text="最大内存（MB）"/></TextBlock>
         <ContentControl x:Name="LoginContent" HorizontalAlignment="Left" Height="414" VerticalAlignment="Center" Width="271" Margin="519,0,0,0"/>
         <mah:Tile ToolTip="微软正版登录" Click="TileClick_Microsoft" HorizontalAlignment="Left" Height="34" Margin="118,338,0,0" VerticalAlignment="Top" Width="33" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" FontSize="16" FontWeight="Normal">
             <Custom:PackIconModern Width="18" Height="18" Kind="SocialMicrosoft" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -58,7 +51,16 @@
         </mah:Tile>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="127,34,0,0" TextWrapping="Wrap" Text="欢迎使用 Cake Launcher！点按下面的磁贴来使用更多功能" VerticalAlignment="Top" Width="316" Foreground="White"/>
         <mah:Tile x:Name="ServerJarDownload" ToolTip="服务端核心下载（BETA）" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="146" FontFamily="Microsoft YaHei UI" Margin="193,70,0,0" BorderBrush="#FF848484" FontSize="6" AutomationProperties.HelpText="启动游戏" Background="#CC0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" FontWeight="Regular" FontStretch="Condensed">
-            <Custom:PackIconModern Height="28" Width="28" Kind="Server" HorizontalAlignment="Center" />
+            <Custom:PackIconModern Height="34" Width="34" Kind="Server" HorizontalAlignment="Center" />
+        </mah:Tile>
+        <mah:Tile Click="TileClick_AuthlibInjector" HorizontalAlignment="Left" Height="33" Margin="344,300,0,0" VerticalAlignment="Top" Width="33" ToolTip="外置登录（Authlib-Injector）" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+            <Custom:PackIconModern Width="20" Height="20" Kind="ClothesShirt" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </mah:Tile>
+        <mah:Tile x:Name="NeverGonnaGiveYouUp" Click="TileClick_NeverGonnaGiveYouUp" HorizontalAlignment="Left" Height="34" Margin="344,338,0,0" VerticalAlignment="Top" Width="33" ToolTip="查看大蛋糕（作者）的女装照片！" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+            <Custom:PackIconMaterialDesign Width="20" Height="20" Kind="Photo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </mah:Tile>
+        <mah:Tile x:Name="GameSettings" Click="TileClick_GameSettings" HorizontalAlignment="Left" Height="34" Margin="382,338,0,0" VerticalAlignment="Top" Width="33" ToolTip="游戏设置" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+            <Custom:PackIconMaterialDesign Width="20" Height="20" Kind="Games" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </mah:Tile>
     </Grid>
 </mah:MetroWindow>

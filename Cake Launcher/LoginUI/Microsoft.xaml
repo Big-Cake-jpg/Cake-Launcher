@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cake_Launcher.LoginUI"
         mc:Ignorable="d"
-        Title="Microsoft 账户登录" Height="755" Width="565">
+        Title="Microsoft 账户登录" Height="414" Width="271">
     <Grid>
         <mah:MetroProgressBar HorizontalAlignment="Center" Height="82" VerticalAlignment="Top" Width="450"/>
         <WebBrowser x:Name="browser">

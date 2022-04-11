@@ -1,5 +1,4 @@
 ﻿using Cake_Launcher.LoginUI;
-using MahApps.Metro.Controls;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
@@ -21,6 +20,8 @@ namespace Cake_Launcher
         LoginUI.Offline Offline = new LoginUI.Offline();
         LoginUI.Microsoft Microsoft = new LoginUI.Microsoft();
         LoginUI.Mojang Mojang = new LoginUI.Mojang();
+        LoginUI.Authlib_Injector AuthlibInjector = new LoginUI.Authlib_Injector();
+        Pages.GameSettings gamesettings = new Pages.GameSettings();
         public int launchMode = 1;
         microsoft_launcher.MicrosoftAPIs microsoftAPIs = new microsoft_launcher.MicrosoftAPIs();
         SquareMinecraftLauncher.Minecraft.Game game = new SquareMinecraftLauncher.Minecraft.Game();
@@ -51,7 +52,7 @@ namespace Cake_Launcher
             bool isFirst = true;
             using (RegistryKey Key1 = Registry.CurrentUser.OpenSubKey("SOFTWARE"))
             {
-                foreach(var i in Key1.GetSubKeyNames())
+                foreach (var i in Key1.GetSubKeyNames())
                 {
                     if (i == "Cake Launcher")
                     {
@@ -63,10 +64,10 @@ namespace Cake_Launcher
             {
                 using (RegistryKey key = Registry.CurrentUser)
                 {
-                   using (RegistryKey software = key.CreateSubKey("Software\\Cake Launcher"))
-                   {
+                    using (RegistryKey software = key.CreateSubKey("Software\\Cake Launcher"))
+                    {
                         software.SetValue("name", registerSetting.name);
-                   }
+                    }
                 }
             }
             else
@@ -86,13 +87,13 @@ namespace Cake_Launcher
             LauncherInitialization();
             ServicePointManager.DefaultConnectionLimit = 512;
             var versions = tools.GetAllTheExistingVersion();
-            versionCombo.ItemsSource = versions;
-            JavaPathCombo.ItemsSource = tools.GetJavaPath();
-            if (versionCombo.Items.Count != 0)
-                versionCombo.SelectedItem = versionCombo.Items[0];
-            if (JavaPathCombo.Items.Count != 0)
-                JavaPathCombo.SelectedItem = JavaPathCombo.Items[0];
-            MemoryTextBox.Text = setting.RAM;
+            gamesettings.versionCombo.ItemsSource = versions;
+            gamesettings.JavaPathCombo.ItemsSource = tools.GetJavaPath();
+            if (gamesettings.versionCombo.Items.Count != 0)
+                gamesettings.versionCombo.SelectedItem = gamesettings.versionCombo.Items[0];
+            if (gamesettings.JavaPathCombo.Items.Count != 0)
+                gamesettings.JavaPathCombo.SelectedItem = gamesettings.JavaPathCombo.Items[0];
+            gamesettings.MemoryTextBox.Text = setting.RAM;
         }
         #region
         //public void CompleteFile()
@@ -122,20 +123,21 @@ namespace Cake_Launcher
                 {
                     startbutton.Content = "Stage 1 - 补全文件";
                     //CompleteFile();
-                    if (versionCombo.Text != string.Empty &&
-                        JavaPathCombo.Text != string.Empty &&
+                    if (gamesettings.versionCombo.Text != string.Empty &&
+                        gamesettings.JavaPathCombo.Text != string.Empty &&
                         (Offline.UserID.Text != string.Empty || Mojang.MojangEmail.Text != string.Empty && Mojang.MojangPassword.Password != string.Empty &&
-                        MemoryTextBox.Text != string.Empty))
+                        gamesettings.MemoryTextBox.Text != string.Empty))
                     {
                         switch (launchMode)
                         {
                             case 1:
                                 startbutton.Content = "Stage 2 - 启动游戏";
-                                await game.StartGame(versionCombo.Text, JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(MemoryTextBox.Text), Offline.UserID.Text);
+                                await game.StartGame(gamesettings.versionCombo.Text, gamesettings.JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(gamesettings.MemoryTextBox.Text), Offline.UserID.Text);
                                 break;
                             case 2:
                                 startbutton.Content = "Stage 2 - Mojang 正版登录";
-                                await game.StartGame(versionCombo.Text, JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(MemoryTextBox.Text), Mojang.MojangEmail.Text, Mojang.MojangPassword.Password);
+                                await game.StartGame(gamesettings.versionCombo.Text, gamesettings.JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(gamesettings.MemoryTextBox.Text), Mojang.MojangEmail.Text, Mojang.MojangPassword.Password);
+                                startbutton.Content = "Stage 3 - 启动游戏";
                                 break;
                             case 3:
                                 startbutton.Content = "Stage 2 - 微软正版登录";
@@ -148,7 +150,12 @@ namespace Cake_Launcher
                                 await t;
                                 var v1 = microsoftAPIs.GetAllThings(t.Result.access_token, false);
                                 startbutton.Content = "Stage 3 - 启动游戏";
-                                await game.StartGame(versionCombo.Text, JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(MemoryTextBox.Text), v1.name, v1.uuid, v1.mcToken, string.Empty, string.Empty);
+                                await game.StartGame(gamesettings.versionCombo.Text, gamesettings.JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(gamesettings.MemoryTextBox.Text), v1.name, v1.uuid, v1.mcToken, string.Empty, string.Empty);
+                                break;
+                            case 4:
+                                startbutton.Content = "Stage 2 - 登录";
+                                await game.StartGame(gamesettings.versionCombo.Text, gamesettings.JavaPathCombo.SelectedValue.ToString(), Convert.ToInt32(gamesettings.MemoryTextBox.Text), AuthlibInjector.authlibInjectorAvatarChoose.ChooseAvatar.Text, AuthlibInjector.authlibInjectorAvatarChoose.ChooseAvatar.SelectedValue.ToString(), AuthlibInjector.skin.accessToken, string.Empty, string.Empty);
+                                startbutton.Content = "Stage 3 - 启动游戏";
                                 break;
                         }
                     }
@@ -178,10 +185,9 @@ namespace Cake_Launcher
         /// <summary>微软正版
         private void TileClick_Microsoft(object sender, RoutedEventArgs e)
         {
-            MetroNavigationWindow Microsoft = new MetroNavigationWindow();
+            LoginContent.Content = new Frame
             {
-                Microsoft.Source = new Uri("/LoginUI/Microsoft.xaml", UriKind.Relative);
-                Microsoft.Show();
+                Content = Microsoft
             };
             launchMode = 3;
         }
@@ -193,6 +199,15 @@ namespace Cake_Launcher
                 Content = Offline
             };
             launchMode = 1;
+        }
+        /// <summary>Authlib-Injector 外置登录
+        private void TileClick_AuthlibInjector(object sender, RoutedEventArgs e)
+        {
+            LoginContent.Content = new Frame
+            {
+                Content = AuthlibInjector
+            };
+            launchMode = 4;
         }
         /// <summary>Mojang 正版
         private void TileClick_Mojang(object sender, RoutedEventArgs e)
@@ -209,11 +224,22 @@ namespace Cake_Launcher
         }
         private void MemoryTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            setting.RAM = MemoryTextBox.Text;
+            setting.RAM = gamesettings.MemoryTextBox.Text;
         }
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             File.WriteAllText(SettingPath, JsonConvert.SerializeObject(setting));
+        }
+        private void TileClick_NeverGonnaGiveYouUp(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.bilibili.com/video/BV1va411w7aM/");
+        }
+        private void TileClick_GameSettings(object sender, RoutedEventArgs e)
+        {
+            LoginContent.Content = new Frame
+            {
+                Content = gamesettings
+            };
         }
     }
 }

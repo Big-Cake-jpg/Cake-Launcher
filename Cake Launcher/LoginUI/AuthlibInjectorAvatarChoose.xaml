@@ -1,0 +1,17 @@
+﻿<Page x:Class="Cake_Launcher.LoginUI.AuthlibInjectorAvatarChoose"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cake_Launcher.LoginUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="414" d:DesignWidth="271"
+      Title="选择要使用的角色">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="外置登录（Authlib-Injector）" VerticalAlignment="Top" Width="218" FontSize="16" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="Step 2 - 选择角色" VerticalAlignment="Top" Width="132" FontSize="16" Foreground="White"/>
+        <ComboBox x:Name="ChooseAvatar" SelectedValuePath="uuid" Background="#CC0078D7" Foreground="White" HorizontalAlignment="Center" Height="31" Margin="0,70,0,0" VerticalAlignment="Top" Width="194" DisplayMemberPath="Name"/>
+
+    </Grid>
+</Page>
