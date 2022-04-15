@@ -411,7 +411,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Game\StartGame.cs" />
     <Compile Include="LoginUI\AuthlibInjector.xaml.cs">
       <DependentUpon>AuthlibInjector.xaml</DependentUpon>
     </Compile>
@@ -463,6 +462,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Settings\GameProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Settings\SettingsMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -471,6 +474,9 @@
   <ItemGroup>
     <Compile Include="Pages\GameSettings.xaml.cs">
       <DependentUpon>GameSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\GameProfile.xaml.cs">
+      <DependentUpon>GameProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\SettingsMainPage.xaml.cs">
       <DependentUpon>SettingsMainPage.xaml</DependentUpon>
@@ -515,9 +521,6 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="bin\Debug\microsoft_launcherx64.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="mojang.png" />

@@ -6,17 +6,16 @@
       xmlns:local="clr-namespace:Cake_Launcher.Pages"
       xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Cake_Launcher.Pages.GameSettings"
       mc:Ignorable="d" 
-      d:DesignHeight="414" d:DesignWidth="271"
+      d:DesignHeight="435" d:DesignWidth="800"
       Title="GameSettings">
 
-    <Grid>
-
-        <ComboBox HorizontalAlignment="Left" Height="25" Margin="0,203,0,0" VerticalAlignment="Top" Width="159" DisplayMemberPath="version" SelectedValuePath="IdVersion" Background="#CC0078D7" x:Name="versionCombo" Foreground="White" FontSize="10"/>
-        <ComboBox x:Name="JavaPathCombo" DisplayMemberPath="Version" HorizontalAlignment="Left" Height="26" Margin="0,173,0,0" VerticalAlignment="Top" Width="159" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="10" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
-        <TextBox x:Name="MemoryTextBox" Text="1024" HorizontalAlignment="Left" Height="25" Margin="0,232,0,0" VerticalAlignment="Top" Width="159" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="10" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="165,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Foreground="White" FontSize="13"><Run Language="zh-cn" Text="Java 路径"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="165,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" Foreground="White" FontSize="13"><Run Language="zh-cn" Text="选择版本"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="165,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Foreground="White" FontSize="13"><Run Language="zh-cn" Text="最大内存（MB）"/></TextBlock>
+    <Grid Background="#7FFFFFFF">
+        <ComboBox HorizontalAlignment="Left" Height="50" Margin="139,197,0,0" VerticalAlignment="Top" Width="303" DisplayMemberPath="version" SelectedValuePath="IdVersion" Background="#CC0078D7" x:Name="versionCombo" Foreground="White" FontSize="20"/>
+        <ComboBox x:Name="JavaPathCombo" DisplayMemberPath="Version" HorizontalAlignment="Left" Height="49" Margin="139,140,0,0" VerticalAlignment="Top" Width="303" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="20" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
+        <TextBox x:Name="MemoryTextBox" Text="1024" HorizontalAlignment="Left" Height="50" Margin="139,252,0,0" VerticalAlignment="Top" Width="303" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="20" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="453,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Foreground="White" FontSize="24"><Run Language="zh-cn" Text="Java 路径"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="453,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Foreground="White" FontSize="24"><Run Language="zh-cn" Text="选择版本"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="453,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Foreground="White" FontSize="24"><Run Language="zh-cn" Text="最大内存（MB）"/></TextBlock>
 
     </Grid>
 </Page>

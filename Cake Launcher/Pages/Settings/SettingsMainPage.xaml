@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Cake_Launcher.Pages.Settings"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="435" d:DesignWidth="800"
       Title="SettingsMainPage">
 
     <Grid>
@@ -13,9 +13,9 @@
             <SolidColorBrush Color="White" Opacity="0.5"/>
 
         </Grid.Background>
-        <ContentControl x:Name="SettingsContent" HorizontalAlignment="Left" Height="450" VerticalAlignment="Center" Width="546" Margin="254,0,0,0"/>
-        <Grid HorizontalAlignment="Left" Height="450" VerticalAlignment="Center" Width="254" Background="#CC0078D7">
-            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Cake Launcher 设置" VerticalAlignment="Top" Height="39" Width="117" Foreground="White" FontSize="16"/>
+        <ContentControl x:Name="SettingsContent" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="546" Margin="254,0,0,0"/>
+        <Grid HorizontalAlignment="Left" Height="435" VerticalAlignment="Center" Width="254" Background="#CC0078D7">
+            <TextBlock HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" Text="Cake Launcher 设置" VerticalAlignment="Top" Height="39" Width="117" Foreground="White" FontSize="16"/>
 
         </Grid>
 

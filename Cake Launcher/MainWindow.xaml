@@ -10,11 +10,30 @@
         Title="Cake Launcher PREVIEW" Height="450" Width="800" Closing="Window_Closing" NonActiveGlowBrush="Red" GlowBrush="#CC0078D7" TitleCharacterCasing="Normal" IsMinButtonEnabled="True" IsMaxRestoreButtonEnabled="False" ResizeMode="CanMinimize">
     <mah:MetroWindow.LeftWindowCommands>
         <mah:WindowCommands>
-            <Button ToolTip="主页">
+            <Button ToolTip="开始" Click="ClosePages">
                 <Custom:PackIconModern Width="22" Height="22" Kind="Home" />
             </Button>
         </mah:WindowCommands>
     </mah:MetroWindow.LeftWindowCommands>
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Click="FeedBack" Content="反馈 Bug">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Custom:PackIconMaterialDesign Width="18"
+                                        Height="18"
+                                        VerticalAlignment="Center"
+                                        Kind="Feedback" />
+                            <TextBlock Margin="4 0 0 0"
+                         VerticalAlignment="Center"
+                         Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/background.png"/>
@@ -62,5 +81,9 @@
         <mah:Tile x:Name="GameSettings" Click="TileClick_GameSettings" HorizontalAlignment="Left" Height="34" Margin="382,338,0,0" VerticalAlignment="Top" Width="33" ToolTip="游戏设置" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Custom:PackIconMaterialDesign Width="20" Height="20" Kind="Games" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </mah:Tile>
+        <mah:Tile x:Name="CloseLoginUI" Click="TileClick_CloseLoginUI" HorizontalAlignment="Left" Height="33" Margin="382,300,0,0" VerticalAlignment="Top" Width="33" ToolTip="关闭登录界面" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+            <Custom:PackIconModern Width="20" Height="20" Kind="Close" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </mah:Tile>
+        <ContentControl x:Name="PageContent" HorizontalAlignment="Center" Height="435" VerticalAlignment="Center" Width="800"/>
     </Grid>
 </mah:MetroWindow>

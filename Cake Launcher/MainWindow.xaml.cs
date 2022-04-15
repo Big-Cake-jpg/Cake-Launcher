@@ -1,4 +1,6 @@
 ﻿using Cake_Launcher.LoginUI;
+using Cake_Launcher.Pages;
+using MahApps.Metro.Controls;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
@@ -16,12 +18,12 @@ namespace Cake_Launcher
     /// </summary>
     public partial class MainWindow
     {
-
         LoginUI.Offline Offline = new LoginUI.Offline();
         LoginUI.Microsoft Microsoft = new LoginUI.Microsoft();
         LoginUI.Mojang Mojang = new LoginUI.Mojang();
         LoginUI.Authlib_Injector AuthlibInjector = new LoginUI.Authlib_Injector();
         Pages.GameSettings gamesettings = new Pages.GameSettings();
+        Pages.Settings.SettingsMainPage settingsmain = new Pages.Settings.SettingsMainPage();
         public int launchMode = 1;
         microsoft_launcher.MicrosoftAPIs microsoftAPIs = new microsoft_launcher.MicrosoftAPIs();
         SquareMinecraftLauncher.Minecraft.Game game = new SquareMinecraftLauncher.Minecraft.Game();
@@ -218,10 +220,6 @@ namespace Cake_Launcher
             };
             launchMode = 2;
         }
-        private void TileClick_OpenSettings(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void MemoryTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             setting.RAM = gamesettings.MemoryTextBox.Text;
@@ -236,9 +234,34 @@ namespace Cake_Launcher
         }
         private void TileClick_GameSettings(object sender, RoutedEventArgs e)
         {
-            LoginContent.Content = new Frame
+            PageContent.Content = new Frame
             {
                 Content = gamesettings
+            };
+        }
+        private void ClosePages(object sender, RoutedEventArgs e)
+        {
+            PageContent.Content = new Frame
+            {
+                Content = new Frame()
+            };
+        }
+        private void FeedBack(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Big-Cake-jpg/Cake-Launcher/issues/new");
+        }
+        private void TileClick_OpenSettings(object sender, RoutedEventArgs e)
+        {
+            PageContent.Content = new Frame
+            {
+                Content = settingsmain
+            };
+        }
+        private void TileClick_CloseLoginUI(object sender, RoutedEventArgs e)
+        {
+            LoginContent.Content = new Frame
+            {
+                Content = new Frame()
             };
         }
     }

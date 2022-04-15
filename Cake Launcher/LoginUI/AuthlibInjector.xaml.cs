@@ -17,6 +17,7 @@ namespace Cake_Launcher.LoginUI
         }
         private async void ButtonClick_LoginToAPIRoot(object sender, RoutedEventArgs e)
         {
+            LoginProgress.Visibility = Visibility.Visible;
             SquareMinecraftLauncher.Minecraft.Tools tools = new SquareMinecraftLauncher.Minecraft.Tools();
             ///var t = Task.Run(() =>
             ///{
