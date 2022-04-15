@@ -17,14 +17,40 @@
 
 ## What's this?
 
-This is a repository of `Cake Launcher`. It's a Minecraft launcher that is currently under developing.
+This is the code repository for a brand new Metro style Minecraft launcher `Cake Launcher`
 
-We need your help to make it user-friendly.
+We **hope for capable bigwigs to contribute**
 
-## Can I make contributions to it?
+## How to get involved in writing?
 
-Of course you can.
+Find `Fork` in the upper right corner of the `GitHub` page and click
 
-Just fork this repository and start coding.
+This way `GitHub` will copy the repository to the repository with the same name as this repository
 
-Thank you for your help!
+Then use tools like `Git` to pull the file and start writing
+
+After writing, **`upload`**, then **open a `Pull Request`**
+
+**Write what you wrote**
+
+After review **will `integrate into code` and `Close Pull Request`**
+
+## Unable to start?
+
+This launcher requires at least .NET Framework 4.7.2, and future WinUI 3 versions require at least .NET Core 5 and Windows 10 1809
+
+Before starting or contributing code, please check whether your computer has the above operating environment installed
+
+## Known bugs:
+
+**This launcher is still in the PREVIEW stage, understandable**
+
+1. The OpenJDK of Zulu cannot be scanned temporarily when JAVA is running
+
+2. Microsoft login is temporarily a decoration
+
+3. Most functions are temporarily unavailable
+
+## Links
+
+[FluentCore](https://github.com/Xcube-Studio/FluentCore) | [Fluent-Launcher](https://github.com/Xcube-Studio/Fluent-Launcher)

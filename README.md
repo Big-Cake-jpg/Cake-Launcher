@@ -42,6 +42,16 @@
 
 在启动或贡献代码之前请先检查你的电脑是否安装了上述运行环境
 
+## 已知BUG：
+
+**本启动器尚在 PREVIEW 阶段，可以理解**
+
+1.JAVA运行时暂时扫描不到 Zulu 的 OpenJDK
+
+2.微软登录暂时是摆设
+
+3.大部分功能暂时不可用
+
 ## 友情链接
 
 [FluentCore](https://github.com/Xcube-Studio/FluentCore) | [Fluent-Launcher](https://github.com/Xcube-Studio/Fluent-Launcher)
