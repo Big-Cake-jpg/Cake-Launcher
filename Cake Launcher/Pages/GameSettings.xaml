@@ -10,12 +10,20 @@
       Title="GameSettings">
 
     <Grid Background="#7FFFFFFF">
-        <ComboBox HorizontalAlignment="Left" Height="50" Margin="139,197,0,0" VerticalAlignment="Top" Width="303" DisplayMemberPath="version" SelectedValuePath="IdVersion" Background="#CC0078D7" x:Name="versionCombo" Foreground="White" FontSize="20"/>
-        <ComboBox x:Name="JavaPathCombo" DisplayMemberPath="Version" HorizontalAlignment="Left" Height="49" Margin="139,140,0,0" VerticalAlignment="Top" Width="303" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="20" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
-        <TextBox x:Name="MemoryTextBox" Text="1024" HorizontalAlignment="Left" Height="50" Margin="139,252,0,0" VerticalAlignment="Top" Width="303" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="20" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
-        <TextBlock HorizontalAlignment="Left" Height="34" Margin="453,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Foreground="White" FontSize="24"><Run Language="zh-cn" Text="Java 路径"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="34" Margin="453,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Foreground="White" FontSize="24"><Run Language="zh-cn" Text="选择版本"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="34" Margin="453,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Foreground="White" FontSize="24"><Run Language="zh-cn" Text="最大内存（MB）"/></TextBlock>
+        <ComboBox HorizontalAlignment="Left" Height="50" Margin="242,197,0,0" VerticalAlignment="Top" Width="303" DisplayMemberPath="version" SelectedValuePath="IdVersion" Background="#CC0078D7" x:Name="versionCombo" Foreground="White" FontSize="20"/>
+        <ComboBox x:Name="JavaPathCombo" DisplayMemberPath="Version" HorizontalAlignment="Left" Height="49" Margin="242,143,0,0" VerticalAlignment="Top" Width="302" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="20" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
+        <TextBox x:Name="MemoryTextBox" Text="2048" HorizontalAlignment="Left" Height="50" Margin="242,252,0,0" VerticalAlignment="Top" Width="303" Background="#CC0078D7" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="20" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="133,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Foreground="White" FontSize="24" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Language="zh-cn" Text="Java 路径"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="133,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Foreground="White" FontSize="24"><Run Language="zh-cn" Text="选择版本"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="72,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Foreground="White" FontSize="24"><Run Language="zh-cn" Text="最大内存（MB）"/></TextBlock>
 
     </Grid>
 </Page>

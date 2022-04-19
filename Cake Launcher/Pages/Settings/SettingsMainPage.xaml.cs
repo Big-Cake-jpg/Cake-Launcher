@@ -24,5 +24,10 @@ namespace Cake_Launcher.Pages.Settings
         {
             InitializeComponent();
         }
+
+        private void Tile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
