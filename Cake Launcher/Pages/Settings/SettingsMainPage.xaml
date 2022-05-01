@@ -17,7 +17,7 @@
         <ContentControl x:Name="SettingsContent" HorizontalAlignment="Left" Height="436" VerticalAlignment="Center" Width="546" Margin="254,0,0,0"/>
         <Grid HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="254" Background="#CC0078D7">
             <TextBlock HorizontalAlignment="Left" Margin="45,31,0,0" TextWrapping="Wrap" Text="设置" VerticalAlignment="Top" Height="39" Width="117" Foreground="White" FontSize="32"/>
-
+            <ContentControl x:Name="SettingsListContent" HorizontalAlignment="Center" Height="340" Margin="0,84,0,0" VerticalAlignment="Top" Width="232"/>
         </Grid>
 
     </Grid>

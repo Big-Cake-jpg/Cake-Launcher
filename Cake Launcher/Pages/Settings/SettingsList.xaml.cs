@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Cake_Launcher.Pages.Settings
 {
     /// <summary>
-    /// SettingsMainPage.xaml 的交互逻辑
+    /// SettingsList.xaml 的交互逻辑
     /// </summary>
-    public partial class SettingsMainPage : Page
+    public partial class SettingsList : Page
     {
-        Pages.Settings.SettingsList settingslist = new Pages.Settings.SettingsList();
-        public SettingsMainPage()
+        public SettingsList()
         {
             InitializeComponent();
-            SettingsListContent.Content = new Frame
-            {
-                Content = settingslist
-            };
         }
     }
 }

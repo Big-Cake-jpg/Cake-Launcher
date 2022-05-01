@@ -458,11 +458,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\DownloadCenter\DownloadCenterMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\GameSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Settings\GameProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Settings\SettingsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -472,11 +480,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\DownloadCenter\DownloadCenterMainPage.xaml.cs">
+      <DependentUpon>DownloadCenterMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GameSettings.xaml.cs">
       <DependentUpon>GameSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\GameProfile.xaml.cs">
       <DependentUpon>GameProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\SettingsList.xaml.cs">
+      <DependentUpon>SettingsList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\SettingsMainPage.xaml.cs">
       <DependentUpon>SettingsMainPage.xaml</DependentUpon>

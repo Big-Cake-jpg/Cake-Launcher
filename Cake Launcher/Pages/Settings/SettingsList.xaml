@@ -1,0 +1,24 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cake_Launcher.Pages.Settings"
+      xmlns:Custom="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Cake_Launcher.Pages.Settings.SettingsList"
+      mc:Ignorable="d" 
+      d:DesignHeight="340" d:DesignWidth="232"
+      Title="SettingsList">
+
+    <Grid>
+        <ScrollBar HorizontalAlignment="Left" Height="340" Margin="220,0,0,0" VerticalAlignment="Center" Width="12"/>
+        <Custom:PackIconModern Foreground="white" Width="25" Height="25" Kind="NetworkServer" Margin="19,226,0,0"/>
+        <Button Foreground="white" Content="网络" HorizontalAlignment="Left" Height="39" Margin="11,219,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}" BorderBrush="{x:Null}" mah:ControlsHelper.FocusBorderBrush="#CCFFFFFF" mah:ControlsHelper.FocusBorderThickness="5,5,5,5"/>
+        <Custom:PackIconModern Foreground="white" Width="25" Height="25" Kind="Download" Margin="19,262,0,0"/>
+        <Button Foreground="white" Content="下载中心" HorizontalAlignment="Left" Height="39" Margin="11,255,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}" BorderBrush="{x:Null}" mah:ControlsHelper.FocusBorderBrush="#CCFFFFFF" mah:ControlsHelper.FocusBorderThickness="5,5,5,5"/>
+        <Custom:PackIconModern Foreground="white" Width="25" Height="25" Kind="LanguageJava" Margin="19,298,0,0"/>
+        <Button Foreground="white" Content="Java 虚拟机与内存" HorizontalAlignment="Left" Height="39" Margin="11,291,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}" BorderBrush="{x:Null}" mah:ControlsHelper.FocusBorderBrush="#CCFFFFFF" mah:ControlsHelper.FocusBorderThickness="5,5,5,5"/>
+
+
+    </Grid>
+</Page>

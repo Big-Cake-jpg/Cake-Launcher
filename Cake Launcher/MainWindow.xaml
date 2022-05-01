@@ -65,7 +65,7 @@
         <mah:Tile x:Name="MojangYggdrasil" Click="TileClick_Mojang" HorizontalAlignment="Left" Height="33" Margin="155,300,0,0" VerticalAlignment="Top" Width="33" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" ToolTip="Mojang 正版登录">
             <Image Height="20" Width="20" VerticalAlignment="Center" Source="/mojang.png"/>
         </mah:Tile>
-        <mah:Tile x:Name="DownloadCenter" HorizontalAlignment="Left" Height="151" Margin="193,144,0,0" VerticalAlignment="Top" Width="146" FontFamily="Microsoft YaHei UI" Title="下载中心" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+        <mah:Tile x:Name="DownloadCenter" Click="TileClick_OpenDownloadCenter"  HorizontalAlignment="Left" Height="151" Margin="193,144,0,0" VerticalAlignment="Top" Width="146" FontFamily="Microsoft YaHei UI" Title="下载中心" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Image Source="/store.png" Height="74" Width="74"/>
         </mah:Tile>
         <mah:Tile x:Name="ServerJarDownload" ToolTip="服务端核心下载（BETA）" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="146" FontFamily="Microsoft YaHei UI" Margin="193,70,0,0" BorderBrush="#FF848484" FontSize="6" AutomationProperties.HelpText="启动游戏" Background="#CC0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" FontWeight="Regular" FontStretch="Condensed">

@@ -18,12 +18,14 @@ namespace Cake_Launcher
     /// </summary>
     public partial class MainWindow
     {
+        //public static MainWindow win;
         LoginUI.Offline Offline = new LoginUI.Offline();
         LoginUI.Microsoft Microsoft = new LoginUI.Microsoft();
         LoginUI.Mojang Mojang = new LoginUI.Mojang();
         LoginUI.Authlib_Injector AuthlibInjector = new LoginUI.Authlib_Injector();
         Pages.GameSettings gamesettings = new Pages.GameSettings();
         Pages.Settings.SettingsMainPage settingsmain = new Pages.Settings.SettingsMainPage();
+        Pages.DownloadCenter.DownloadCenterMainPage DownloadCenterMainPage = new Pages.DownloadCenter.DownloadCenterMainPage();
         public int launchMode = 1;
         microsoft_launcher.MicrosoftAPIs microsoftAPIs = new microsoft_launcher.MicrosoftAPIs();
         SquareMinecraftLauncher.Minecraft.Game game = new SquareMinecraftLauncher.Minecraft.Game();
@@ -32,6 +34,15 @@ namespace Cake_Launcher
         Setting setting = new Setting();
         string SettingPath = @"cakelauncher.json";
         RegisterSetting registerSetting = new RegisterSetting();
+        //Frame PageFrame = new Frame() { Content = new MainWindow()};
+        //Frame SettingsFrame = new Frame() { Content = new Pages.Settings.SettingsMainPage()};
+        //Frame DownloadFrame = new Frame() { Content = new Pages.DownloadCenter.DownloadCenterMainPage()};
+        //public enum WindowsID
+        //{
+        //    PageFrame,
+        //    SettingsFrame,
+        //    DownloadFrame
+        //}
         public class Setting
         {
             public string RAM = "1024";
@@ -86,6 +97,8 @@ namespace Cake_Launcher
         public MainWindow()
         {
             InitializeComponent();
+            //win = this;
+            //WindowChange(WindowsID.PageFrame);
             LauncherInitialization();
             ServicePointManager.DefaultConnectionLimit = 512;
             var versions = tools.GetAllTheExistingVersion();
@@ -234,6 +247,7 @@ namespace Cake_Launcher
         }
         private void TileClick_GameSettings(object sender, RoutedEventArgs e)
         {
+            //MainWindow.win.WindowChange(MainWindow.WindowsID.SettingsFrame);
             PageContent.Content = new Frame
             {
                 Content = gamesettings
@@ -252,6 +266,7 @@ namespace Cake_Launcher
         }
         private void TileClick_OpenSettings(object sender, RoutedEventArgs e)
         {
+            //Page Pages.Settings.SettingsMainPage = new SMP();
             PageContent.Content = new Frame
             {
                 Content = settingsmain
@@ -264,6 +279,28 @@ namespace Cake_Launcher
                 Content = new Frame()
             };
         }
+        private void TileClick_OpenDownloadCenter(object sender, RoutedEventArgs e)
+        {
+            PageContent.Content = new Frame
+            {
+                Content = DownloadCenterMainPage
+            };
+        }
+        //public void WindowChange(WindowsID, winid)
+        //{
+        //    switch (winid)
+        //    {
+        //        case WindowsID.PageFrame:
+        //            PageContent.Content = PageFrame;
+        //            break
+        //        case WindowsID.SettingsFrame:
+        //            PageContent.Content = SettingsFrame;
+        //            break
+        //        //case WindowsID.DownloadFrame:
+        //        //    PageContent.Content = DownloadCenterMainPage;
+        //        //    break
+        //    }
+        //} 
     }
 }
 
