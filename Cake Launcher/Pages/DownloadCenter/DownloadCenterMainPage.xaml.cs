@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using MahApps.Metro.Controls;
 
 namespace Cake_Launcher.Pages.DownloadCenter
@@ -24,6 +25,14 @@ namespace Cake_Launcher.Pages.DownloadCenter
         public DownloadCenterMainPage()
         {
             InitializeComponent();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 5);//设置的间隔为一分钟
+            timer.IsEnabled = true;
+            timer.Start();
+        }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+
         }
         private void FlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -31,13 +40,13 @@ namespace Cake_Launcher.Pages.DownloadCenter
             switch (flipview.SelectedIndex)
             {
                 case 0:
-                    flipview.BannerText = "Cupcakes!";
+                    flipview.BannerText = "下载中心暂未制作完成，敬请期待";
                     break;
                 case 1:
-                    flipview.BannerText = "Xbox!";
+                    flipview.BannerText = "CurseForge 上热门 —— Just Enough Items";
                     break;
                 case 2:
-                    flipview.BannerText = "Chess!";
+                    flipview.BannerText = "隆重向您推荐：Sodium";
                     break;
             }
         }

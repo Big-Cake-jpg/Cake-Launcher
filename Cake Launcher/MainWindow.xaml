@@ -36,7 +36,7 @@
     </mah:MetroWindow.RightWindowCommands>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/background.png"/>
+            <ImageBrush ImageSource="/background.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <mah:Tile x:Name="NewsCenter" HorizontalAlignment="Left" Height="147" Margin="40,70,0,0" VerticalAlignment="Top" Width="148" FontFamily="Microsoft YaHei UI" Title="资讯中心" BorderBrush="#FF848484" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
@@ -56,10 +56,10 @@
             <Custom:PackIconFontAwesome Height="25" Width="25" Kind="BurnSolid" />
         </mah:Tile>
         <ContentControl x:Name="LoginContent" HorizontalAlignment="Left" Height="414" VerticalAlignment="Center" Width="271" Margin="519,0,0,0"/>
-        <mah:Tile ToolTip="微软正版登录" Click="TileClick_Microsoft" HorizontalAlignment="Left" Height="34" Margin="117,300,0,0" VerticalAlignment="Top" Width="33" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" FontSize="16" FontWeight="Normal">
+        <mah:Tile ToolTip="微软正版登录" Click="TileClick_Microsoft" HorizontalAlignment="Left" Height="33" Margin="117,300,0,0" VerticalAlignment="Top" Width="33" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" FontSize="16" FontWeight="Normal">
             <Custom:PackIconModern Width="18" Height="18" Kind="SocialMicrosoft" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </mah:Tile>
-        <mah:Tile Click="TileClick_Offline" HorizontalAlignment="Left" Height="34" Margin="155,338,0,0" VerticalAlignment="Top" Width="33" ToolTip="离线登录" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+        <mah:Tile Click="TileClick_Offline" HorizontalAlignment="Left" Height="33" Margin="155,339,0,0" VerticalAlignment="Top" Width="33" ToolTip="离线登录" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
             <Custom:PackIconMaterialDesign Width="20" Height="20" Kind="AccountCircle" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </mah:Tile>
         <mah:Tile x:Name="MojangYggdrasil" Click="TileClick_Mojang" HorizontalAlignment="Left" Height="33" Margin="155,300,0,0" VerticalAlignment="Top" Width="33" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" ToolTip="Mojang 正版登录">
@@ -77,7 +77,7 @@
         <mah:Tile x:Name="NeverGonnaGiveYouUp" Click="TileClick_NeverGonnaGiveYouUp" HorizontalAlignment="Left" Height="34" Margin="10,377,0,0" VerticalAlignment="Top" Width="33" ToolTip="查看大蛋糕（作者）的女装照片！" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" RenderTransformOrigin="0.525,0.503">
             <Custom:PackIconMaterialDesign Width="20" Height="20" Kind="Photo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </mah:Tile>
-        <mah:Tile x:Name="GameSettings" Click="TileClick_GameSettings" HorizontalAlignment="Left" Height="34" Margin="344,338,0,0" VerticalAlignment="Top" Width="33" ToolTip="游戏设置" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" RenderTransformOrigin="0.505,0.513">
+        <mah:Tile x:Name="GameSettings" Click="TileClick_OpenGameSettings" HorizontalAlignment="Left" Height="34" Margin="344,338,0,0" VerticalAlignment="Top" Width="33" ToolTip="游戏设置" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10" RenderTransformOrigin="0.505,0.513">
             <Custom:PackIconMaterialDesign Width="20" Height="20" Kind="Games" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </mah:Tile>
         <mah:Tile x:Name="CloseLoginUI" Click="TileClick_CloseLoginUI" HorizontalAlignment="Left" Height="33" Margin="486,10,0,0" VerticalAlignment="Top" Width="33" ToolTip="关闭登录界面" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">

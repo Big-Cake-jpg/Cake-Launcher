@@ -19,6 +19,9 @@ namespace Cake_Launcher
     public partial class MainWindow
     {
         //public static MainWindow win;
+
+        //初始化启动器
+
         LoginUI.Offline Offline = new LoginUI.Offline();
         LoginUI.Microsoft Microsoft = new LoginUI.Microsoft();
         LoginUI.Mojang Mojang = new LoginUI.Mojang();
@@ -43,6 +46,8 @@ namespace Cake_Launcher
         //    SettingsFrame,
         //    DownloadFrame
         //}
+
+        //设置保存（json）
         public class Setting
         {
             public string RAM = "1024";
@@ -62,6 +67,7 @@ namespace Cake_Launcher
             {
                 setting = JsonConvert.DeserializeObject<Setting>(File.ReadAllText(SettingPath));
             }
+            //设置保存（注册表）
             bool isFirst = true;
             using (RegistryKey Key1 = Registry.CurrentUser.OpenSubKey("SOFTWARE"))
             {
@@ -94,6 +100,8 @@ namespace Cake_Launcher
                 }
             }
         }
+
+        //设置默认的 Java 与版本选择
         public MainWindow()
         {
             InitializeComponent();
@@ -130,6 +138,8 @@ namespace Cake_Launcher
         //    }
         //}
         #endregion
+
+        //启动游戏
         public async void GameStart()
         {
             try
@@ -189,6 +199,8 @@ namespace Cake_Launcher
                 startbutton.Content = "确认启动吗？";
             }
         }
+
+        //应用内磁贴
         private void ButtonClick_StartGame(object sender, RoutedEventArgs e)
         {
             GameStart();
@@ -233,6 +245,8 @@ namespace Cake_Launcher
             };
             launchMode = 2;
         }
+
+        //设置保存
         private void MemoryTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             setting.RAM = gamesettings.MemoryTextBox.Text;
@@ -241,11 +255,13 @@ namespace Cake_Launcher
         {
             File.WriteAllText(SettingPath, JsonConvert.SerializeObject(setting));
         }
+
+        //杂七杂八的
         private void TileClick_NeverGonnaGiveYouUp(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.bilibili.com/video/BV1va411w7aM/");
         }
-        private void TileClick_GameSettings(object sender, RoutedEventArgs e)
+        private void TileClick_OpenGameSettings(object sender, RoutedEventArgs e)
         {
             //MainWindow.win.WindowChange(MainWindow.WindowsID.SettingsFrame);
             PageContent.Content = new Frame
