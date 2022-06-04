@@ -54,4 +54,4 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        path: D:/a/Cake-Launcher/Cake-Launcher/Cake Launcher/bin/Debug/Cake Launcher.exe
+        path: D:\a\Cake-Launcher\Cake-Launcher\Cake Launcher\bin\Debug\Cake Launcher.exe
