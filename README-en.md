@@ -21,20 +21,6 @@ This is the code repository for a brand new Metro style Minecraft launcher `Cake
 
 We **hope for capable bigwigs to contribute**
 
-## How to get involved in writing?
-
-Find `Fork` in the upper right corner of the `GitHub` page and click
-
-This way `GitHub` will copy the repository to the repository with the same name as this repository
-
-Then use tools like `Git` to pull the file and start writing
-
-After writing, **`upload`**, then **open a `Pull Request`**
-
-**Write what you wrote**
-
-After review **will `integrate into code` and `Close Pull Request`**
-
 ## Unable to start?
 
 This launcher requires at least .NET Framework 4.7.2, and future WinUI 3 versions require at least .NET Core 5 and Windows 10 1809
@@ -50,6 +36,20 @@ Before starting or contributing code, please check whether your computer has the
 2. Microsoft login is temporarily a decoration
 
 3. Most functions are temporarily unavailable
+
+## How to get involved in writing?
+
+Find `Fork` in the upper right corner of the `GitHub` page and click
+
+This way `GitHub` will copy the repository to the repository with the same name as this repository
+
+Then use tools like `Git` to pull the file and start writing
+
+After writing, **`upload`**, then **open a `Pull Request`**
+
+**Write what you wrote**
+
+After review **will `integrate into code` and `Close Pull Request`**
 
 ## Links
 
