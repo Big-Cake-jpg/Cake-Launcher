@@ -52,7 +52,7 @@ jobs:
         Configuration: ${{ matrix.configuration }}
 
     - name: Archive release
-      run: zip -9 -r Cake Launcher Preview-${{ steps.short-sha.outputs.sha }}.zip /Cake Launcher/bin/Debug/Cake Launcher.exe
+      run: makecab /Cake Launcher/bin/Debug/Cake Launcher.exe Cake Launcher Preview-${{ steps.short-sha.outputs.sha }}.zip 
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
