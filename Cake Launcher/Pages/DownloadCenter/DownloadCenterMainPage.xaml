@@ -14,25 +14,38 @@
         <Grid.Background>
             <ImageBrush ImageSource="/background.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Image Margin="10,10,735,376" Source="/store.png"/>
+        <Image Margin="10,10,732,373" Source="/Pages/DownloadCenter/ic_fluent_store_microsoft_24_filled.png"/>
         <TextBlock HorizontalAlignment="Left" Height="45" Margin="70,12,0,0" TextWrapping="Wrap" Text="下载中心" VerticalAlignment="Top" Width="144" Foreground="White" FontSize="36"/>
-        <WrapPanel Margin="70,70,70,0">
+        <WrapPanel Margin="70,70,70,-336" Background="#BAFFFFFF">
             <mah:FlipView HorizontalAlignment="Left" CircularNavigation="True" Height="183" Margin="0,0,0,0" VerticalAlignment="Top" Width="400" SelectionChanged="FlipView_SelectionChanged">
                 <Grid Background="#2E8DEF">
-                    <Custom:PackIconMaterialDesign Width="60"
-                                      Height="60"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"
-                                      Kind="DeveloperMode"
-                                      Foreground="#ffffff" />
+                    <Image Source="/Pages/DownloadCenter/ic_fluent_developer_board_24_filled.png" Width="75" Height="75"/>
                 </Grid>
                 <Grid Background="#ffffff">
+                    <mah:ProgressRing Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF0087FF" IsLarge="False" />
                     <Image Source="https://media.forgecdn.net/attachments/thumbnails/31/417/310/172/thzzdin.png" Stretch="UniformToFill" />
                 </Grid>
-                <Grid Background="#ffffff">
-                    <Image Source="https://i.imgur.com/TzLurlG.png" Stretch="UniformToFill" />
+                <Grid Background="#6fc359">
+                    <mah:ProgressRing Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF0087FF" IsLarge="False" />
+                    <Image Source="https://cdn-raw.modrinth.com//data/AANobbMI/icon.png" Stretch="Uniform" />
                 </Grid>
             </mah:FlipView>
+            <Grid Height="175" Width="256">
+                <mah:Tile Title="安装 Minecraft" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="162" Margin="3,3,0,0" Background="#CCD7BB00" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+                    <Image Source="/Pages/DownloadCenter/ic_fluent_cube_24_filled.png" Height="40" Width="45"/>
+                </mah:Tile>
+                <mah:Tile ToolTip="下载 Mods" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="82" Margin="3,90,0,0" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+                    <Image Width="41" Source="/Pages/DownloadCenter/ic_fluent_apps_add_in_24_filled.png" Height="41"/>
+                </mah:Tile>
+                <mah:Tile HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="162" Margin="90,90,0,0" Background="#CCD70000" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+                    <!--<Image Source=""/>-->
+                </mah:Tile>
+                <mah:Tile HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="82" Margin="170,3,0,0" Background="#CC9600D7" mah:ControlsHelper.MouseOverBorderBrush="#FFE2E2E2" mah:ControlsHelper.FocusBorderThickness="10,10,10,10">
+
+                </mah:Tile>
+
+            </Grid>
+
         </WrapPanel>
     </Grid>
 </Page>

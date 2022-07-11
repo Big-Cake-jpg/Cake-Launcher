@@ -548,6 +548,48 @@
   <ItemGroup>
     <Folder Include="resources\icons\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\DownloadCenter\ic_fluent_apps_add_in_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\DownloadCenter\ic_fluent_cube_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\DownloadCenter\ic_fluent_developer_board_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\DownloadCenter\ic_fluent_store_microsoft_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_image_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_server_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_store_microsoft_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_person_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_rocket_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_chat_help_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_settings_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_news_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_person_feedback_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ic_fluent_home_24_filled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
