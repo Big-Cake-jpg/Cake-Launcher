@@ -464,6 +464,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DownloadCenter\ResourcesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\GameSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -484,6 +488,9 @@
   <ItemGroup>
     <Compile Include="Pages\DownloadCenter\DownloadCenterMainPage.xaml.cs">
       <DependentUpon>DownloadCenterMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DownloadCenter\ResourcesView.xaml.cs">
+      <DependentUpon>ResourcesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\GameSettings.xaml.cs">
       <DependentUpon>GameSettings.xaml</DependentUpon>

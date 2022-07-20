@@ -1,0 +1,40 @@
+﻿<Page x:Class="Cake_Launcher.Pages.DownloadCenter.ResourcesView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cake_Launcher.Pages.DownloadCenter" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="434" d:DesignWidth="800"
+      Title="ResourcesView">
+
+    <Grid Background="#f4f3f2">
+        <Grid HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="269" Background="White">
+            <Border BorderBrush="#FFC8C8C8" BorderThickness="1" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="2" Margin="267,0,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="100" Margin="80,70,0,0" VerticalAlignment="Top" Width="100" Background="#FFF3F3F3">
+                <mah:ProgressRing Height="30" Width="30" />
+            </Grid>
+            <Button Content="获取" HorizontalAlignment="Left" Height="28" Margin="67,217,0,0" VerticalAlignment="Top" Width="126" Background="#FF007FD2" Foreground="White"/>
+            <TextBlock Block.TextAlignment="Center" HorizontalAlignment="Left" Height="20" Margin="55,175,0,0" TextWrapping="Wrap" Text="这是一个神奇的模组" VerticalAlignment="Top" Width="150"/>
+            <TextBlock Block.TextAlignment="Center" HorizontalAlignment="Left" Height="18" Margin="67,195,0,0" TextWrapping="Wrap" Text="没有作者呢......" VerticalAlignment="Top" Width="126" Foreground="#FFA3A3A3"/>
+        </Grid>
+        <ScrollViewer HorizontalAlignment="Left" Height="414" Margin="290,0,0,0" VerticalAlignment="Center" Width="500">
+            <Grid Height="742">
+                <StackPanel Background="#FFFFFF" Margin="10,10,10,518">
+                    <TextBlock HorizontalAlignment="Left" Block.TextAlignment="Center" Height="39" TextWrapping="Wrap" Text="预览" Width="64" FontSize="28" Margin="15,15,0,0" FontWeight="Bold"/>
+
+                </StackPanel>
+                <StackPanel Background="#FFFFFF" Margin="10,240,10,288"  Width="476">
+                    <TextBlock HorizontalAlignment="Left" Block.TextAlignment="Center" Height="39" TextWrapping="Wrap" Text="描述" Width="64" FontSize="28" Margin="15,15,0,0" FontWeight="Bold"/>
+
+                </StackPanel>
+                <StackPanel Background="#FFFFFF" Margin="10,470,10,74"  Width="476">
+                    <TextBlock HorizontalAlignment="Left" Block.TextAlignment="Center" Height="39" TextWrapping="Wrap" Text="版本要求" Width="120" FontSize="28" Margin="15,15,0,0" FontWeight="Bold"/>
+
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+        <mah:MetroProgressBar IsIndeterminate="True" HorizontalAlignment="Left" Height="10" Margin="301,10,0,0" VerticalAlignment="Top" Width="475" Background="#FF007FD2"/>
+
+    </Grid>
+</Page>

@@ -22,6 +22,7 @@ namespace Cake_Launcher.Pages.DownloadCenter
     /// </summary>
     public partial class DownloadCenterMainPage : Page
     {
+        Pages.DownloadCenter.ResourcesView ResourcesView = new Pages.DownloadCenter.ResourcesView();
         public DownloadCenterMainPage()
         {
             InitializeComponent();
@@ -49,6 +50,13 @@ namespace Cake_Launcher.Pages.DownloadCenter
                     flipview.BannerText = "隆重向您推荐：Sodium";
                     break;
             }
+        }
+        private void TileClick_ModDownload(object sender, RoutedEventArgs e)
+        {
+            DownloadContent.Content = new Frame
+            {
+                Content = ResourcesView
+            };
         }
     }
 }
